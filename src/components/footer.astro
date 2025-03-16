@@ -1,0 +1,28 @@
+---
+import logo from "../assets/images/logo.png";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Project Ideas", href: "/projects" },
+  { name: "Team", href: "/team" },
+  { name: "Sponsors", href: "/sponsors" },
+];
+---
+
+<footer class="flex items-center justify-between px-8 py-6 bg-white shadow-t-md">
+
+    <div class="flex items-center space-x-2">
+      <img src={logo.src} alt="UBC BIOMOD Logo" class="h-10 w-10">
+      <span class="font-bold text-lg">UBC BIOMOD</span>
+    </div>
+  
+    <ul class="flex space-x-6">
+      {navLinks.map((link) => (
+        <li>
+          <a href={link.href} class="text-gray-800 hover:text-blue-600 transition">
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </footer>
