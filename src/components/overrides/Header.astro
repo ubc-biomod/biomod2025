@@ -1,0 +1,82 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import SearchDefault from "@astrojs/starlight/components/Search.astro";
+import { BsBoxArrowUpRight } from "react-icons/bs";
+import { IconContext } from "react-icons/lib";
+import HomeButton from "./HomeButton.astro";
+import Navbar from "../Navbar.jsx"
+
+const normalPages = Astro.props.sidebar
+  .filter((item) => item.type === "link")
+  .map((item) => item.href);
+const isNormalPage = normalPages.includes("/" + Astro.props.slug);
+const currentBase = Astro.url.pathname.split("/").slice(0, 2).join("/");
+
+
+let links: { title: string; href: string; base: string }[] = [];
+let callToActionLink = {
+  title: "",
+  href: "",
+  base: "",
+};
+
+Astro.props.sidebar.forEach((item) => {
+  // Normal pages
+  if (item.type === "link" && isNormalPage) {
+    links.push({
+      title: item.label,
+      href: item.href,
+      base: item.href.split("/").slice(0, 2).join("/"),
+    });
+    return;
+  }
+
+  // Docs pages
+  if (item.type !== "group" || item.entries.length === 0) return;
+
+  const firstLink = item.entries.find((e) => e.type === "link");
+  if (!firstLink) return;
+
+  if (item.badge?.text === "Call to Action" && isNormalPage) {
+    callToActionLink.href = firstLink.href;
+    callToActionLink.title = item.label;
+  } else {
+    links.push({
+      title: item.label,
+      href: firstLink.href,
+      base: firstLink.href.split("/").slice(0, 2).join("/"),
+    });
+  }
+});
+---
+
+<div class="flex flex-row text-center bg-transparent">
+  {/* Logo + Team Name */}
+  <div class="whitespace-nowrap">
+    <HomeButton {...Astro.props} />
+  </div>
+
+  <Navbar links={links} currentBase={currentBase} callToActionLink={callToActionLink} isNormalPage={isNormalPage} client:load />
+
+  <div class="hidden lg:block">
+    {
+      isNormalPage ? (
+        <a href={callToActionLink.href} class={`btn-primary`}>
+          <span>{callToActionLink.title}</span>
+          <IconContext.Provider value={{ className: "" }}>
+            <BsBoxArrowUpRight />
+          </IconContext.Provider>
+        </a>
+      ) : (
+        <div class="basis-1/5">
+          <SearchDefault {...Astro.props} />
+        </div>
+      )
+    }
+  </div>
+  
+</div>
+
+<div>
+  Hello
+</div>

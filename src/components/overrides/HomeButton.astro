@@ -1,0 +1,15 @@
+---
+import Logo from "../../assets/logo.png";
+import type { Props } from "@astrojs/starlight/props";
+import { Image } from "astro:assets";
+import "../../styles/global.css";
+---
+
+<a href={Astro.props.siteTitleHref}>
+  <div
+    class="flex flex-row gap-x-3 justify-center items-center hover:opacity-70"
+  >
+    <Image src={Logo} alt="UBC BIOMOD Logo" class="w-8 h-8" />
+    <span class="text-navText dark:text-white font-bold">{Astro.props.siteTitle}</span>
+  </div>
+</a>
