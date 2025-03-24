@@ -16,21 +16,15 @@ export default defineConfig({
       social: {
         github: "https://github.com/withastro/starlight",
       },
+      customCss: [
+        // Path to your Tailwind base styles:
+        "./src/styles/global.css",
+      ],
       logo: {
         src: "./src/assets/logo.png",
+        replacesTitle: true,
       },
       sidebar: [
-        {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
-        },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
-        },
         {
           label: "Home",
           link: "/",
@@ -51,9 +45,15 @@ export default defineConfig({
             text: "Call to Action",
           },
         },
+        {
+          label: "Sponsors",
+          link: "/sponsors",
+          badge: "Hidden",
+        },
       ],
       components: {
         Header: "./src/components/overrides/Header.astro",
+        Pagination: "./src/components/overrides/Pagination.astro",
       },
     }),
     react(),

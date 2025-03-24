@@ -7,9 +7,6 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
 
   return (
     <div className="flex flex-col lg:flex-row gap-x-16 grow justify-end lg:justify-center items-end lg:items-center basis-1/2">
-      <p>
-        Normal page is: {isNormalPage? "true" : "false"}
-      </p>
       {/* Hamburger Icon (Mobile) */}
       <div className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}

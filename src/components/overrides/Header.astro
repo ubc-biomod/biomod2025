@@ -22,7 +22,7 @@ let callToActionLink = {
 
 Astro.props.sidebar.forEach((item) => {
   // Normal pages
-  if (item.type === "link" && isNormalPage) {
+  if (item.type === "link") {
     links.push({
       title: item.label,
       href: item.href,
@@ -31,16 +31,19 @@ Astro.props.sidebar.forEach((item) => {
     return;
   }
 
+
   // Docs pages
   if (item.type !== "group" || item.entries.length === 0) return;
 
   const firstLink = item.entries.find((e) => e.type === "link");
   if (!firstLink) return;
 
+
+
   if (item.badge?.text === "Call to Action" && isNormalPage) {
     callToActionLink.href = firstLink.href;
     callToActionLink.title = item.label;
-  } else {
+  } else if (item.badge?.text !== "Call to Action"){
     links.push({
       title: item.label,
       href: firstLink.href,
@@ -75,8 +78,4 @@ Astro.props.sidebar.forEach((item) => {
     }
   </div>
   
-</div>
-
-<div>
-  Hello
 </div>
