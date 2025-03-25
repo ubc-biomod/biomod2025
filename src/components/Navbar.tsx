@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { FiMenu, FiX } from 'react-icons/fi';
 
-export default function Navbar({ links, currentBase, callToActionLink, isNormalPage }) {
+type Link = {
+  href: string;
+  title: string;
+  base?: string;
+};
+
+export default function Navbar({ links, currentBase, callToActionLink, isNormalPage }: { links: Link[]; currentBase: string; callToActionLink: Link; isNormalPage: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -14,7 +20,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
 
       {/* Navigation Links */}
       <div className={`flex flex-col lg:flex-row gap-x-8 items-end lg:items-center lg:gap-x-16 ${isOpen ? 'block' : 'hidden'} lg:flex`}>
-        {links.map((link) => (
+        {links.map((link: Link) => (
           <a
             key={link.href}
             href={link.href}
@@ -23,7 +29,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
             {link.title}
             <div
               className={`max-w-0 group-hover:left-0 group-hover:max-w-full h-[0.2rem] bg-black transition-all duration-300 origin-center relative 
-                ${link.base === currentBase ? "left-0 max-w-full" : "left-1/2"}`}
+          ${link.base === currentBase ? "left-0 max-w-full" : "left-1/2"}`}
             />
           </a>
         ))}
