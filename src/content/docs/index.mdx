@@ -8,8 +8,10 @@ hero: # THIS IS INTENTIONALLY LEFT BLANK!!
 import Example from "../../react/example";
 import ExampleBetter from "../../react/examplebetter";
 import { exampleData } from "../../react/examplebetterdata";
+import Card from "../../components/reusable/Card";
 
 <h1 class="text-4xl font-bold text-red-500">Tailwind is Working!</h1>
+<Card title="Hello" content="Joseph was here :DD" />
 <Example />
 {exampleData.map((item) => (
   <ExampleBetter
