@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+.hero {
+  /* --sl-color-hairline: transparent; */
+  height: 0;
+}
+
+.astro-jbfsktt5 {
+  display: none;
+}
