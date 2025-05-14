@@ -54,6 +54,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/overrides/Header.astro",
         Pagination: "./src/components/overrides/Pagination.astro",
+        Footer: "./src/components/overrides/Footer.astro",
       },
     }),
     react(),
