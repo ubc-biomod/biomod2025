@@ -6,4 +6,25 @@ hero: # THIS IS INTENTIONALLY LEFT BLANK!!
   tagline: ""
 ---
 
+import StickyCard from "../../components/reusable/StickyCard";
+
 Here are our sponsors
+
+<div class="mt-[50px]">
+  <StickyCard title="Sticky Card" i={0} class="w-full bg-gray-100">
+    <p>
+      This is a sticky card. It will stay in the same place on the screen as
+      you scroll down.
+    </p>
+  </StickyCard>
+  <StickyCard title="Sticky Card 2" i={1} class="w-full bg-gray-300">
+    <p>
+      Hello, this is another sticky card. It will also stay in the same place
+    </p>  
+  </StickyCard>
+  <StickyCard title="Sticky Card 3" i={2} class="w-full bg-gray-500">
+    <p>
+      HI!
+    </p>  
+  </StickyCard>
+</div>

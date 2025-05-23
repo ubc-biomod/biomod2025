@@ -9,9 +9,10 @@ import Example from "../../react/example";
 import ExampleBetter from "../../react/examplebetter";
 import { exampleData } from "../../react/examplebetterdata";
 import Card from "../../components/reusable/Card";
+import StickyCard from "../../components/reusable/StickyCard";
 
 <h1 class="text-4xl font-bold text-red-500">Tailwind is Working!</h1>
-<Card title="Hello">
+<Card title="Hello" className="bg-gray-500">
   <p>Joseph Was Here :DD</p>
   <Card title="Cardception">
     <p>
@@ -34,6 +35,25 @@ import Card from "../../components/reusable/Card";
     />
   </Card>
 </Card>
+
+<div class="mt-[50px]">
+  <StickyCard title="Sticky Card" i={0}>
+    <p>
+      This is a sticky card. It will stay in the same place on the screen as
+      you scroll down.
+    </p>
+  </StickyCard>
+  <StickyCard title="Sticky Card 2" i={1}>
+    <p>
+      Hello, this is another sticky card. It will also stay in the same place
+    </p>  
+  </StickyCard>
+  <StickyCard title="Sticky Card 3" i={2}>
+    <p>
+      HI!
+    </p>  
+  </StickyCard>
+</div>
 
 <Example />
 {exampleData.map((item) => (

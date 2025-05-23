@@ -8,3 +8,12 @@
 .astro-jbfsktt5 {
   display: none;
 }
+
+.cardContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+}
