@@ -8,3 +8,16 @@
 .astro-jbfsktt5 {
   display: none;
 }
+
+html,
+body {
+  @apply h-full;
+}
+
+body > div {
+  @apply flex flex-col min-h-screen;
+}
+
+main {
+  @apply flex-grow;
+}
