@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { FiMenu, FiX } from 'react-icons/fi';
 
-type Link = {
+export type Link = {
   href: string;
   title: string;
   base?: string;
