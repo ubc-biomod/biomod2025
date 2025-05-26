@@ -13,10 +13,10 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-4 pt-4">
+    <div className="grid grid-cols-3 gap-x-4 px-32 pt-4">
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="UBC BIOMOD Logo" className="h-10 w-10" />
-        <span className="font-bold text-lg">UBC BIOMOD</span>
+        <img src={logo} alt="UBC BIOMOD Logo" className="h-12 w-auto" />
+        <span className="font-bold text-2xl">UBC BIOMOD</span>
       </div>
 
       {/* Hamburger Icon (Mobile) */}
