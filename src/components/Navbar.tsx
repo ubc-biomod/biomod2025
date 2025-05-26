@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { FiMenu, FiX } from 'react-icons/fi';
+import logo from "../assets/images/logo.png";
 
-type Link = {
+export type Link = {
   href: string;
   title: string;
   base?: string;
@@ -12,14 +13,19 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-x-16 grow justify-end lg:justify-center items-end lg:items-center basis-1/2">
+    <div className="grid grid-cols-3 gap-x-4 px-4 pt-4">
+      <div className="flex items-center space-x-2">
+        <img src={logo} alt="UBC BIOMOD Logo" className="h-10 w-10" />
+        <span className="font-bold text-lg">UBC BIOMOD</span>
+      </div>
+
       {/* Hamburger Icon (Mobile) */}
-      <div className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+      <div className="flex lg:hidden col-start-3 justify-end" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
       </div>
 
       {/* Navigation Links */}
-      <div className={`flex flex-col lg:flex-row gap-x-8 items-end lg:items-center lg:gap-x-16 ${isOpen ? 'block' : 'hidden'} lg:flex`}>
+      <div className={`hidden lg:flex gap-x-8 justify-center`}>
         {links.map((link: Link) => (
           <a
             key={link.href}

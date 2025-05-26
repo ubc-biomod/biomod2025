@@ -1,12 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import "tailwindcss/preflight"
+@tailwind utilities;
 
 .hero {
   /* --sl-color-hairline: transparent; */
   height: 0;
-}
-
-.astro-jbfsktt5 {
-  display: none;
 }
 
 .cardContainer {
