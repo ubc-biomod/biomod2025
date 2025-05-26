@@ -30,9 +30,6 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow bg-red-400">
         <Navbar links={links} currentBase={currentBase} callToActionLink={callToActionLink} isNormalPage={isNormalPage} />
-        {/* Put all your content here (e.g. merged Starlight docs) */}
-        <h1 className="text-3xl font-bold">Welcome to UBC BIOMOD</h1>
-        <p>Here is all your content, now rendered as a single React page.</p>
         <Footer links={[{title: "Instagram", href: "https://www.ubcbiomod.com"}, {title: "Instagram", href: "https://www.ubcbiomod.com"}, {title: "Instagram", href: "https://www.ubcbiomod.com"}]} />
       </main>
     </div>
