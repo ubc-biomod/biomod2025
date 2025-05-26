@@ -2,8 +2,7 @@ import SponsorCards from '../components/SponsorCards'
 
 function SponsorsPage() {
     return (
-        <div>
-            Hello world
+        <div className='mx-32'>
             <SponsorCards></SponsorCards>
         </div>
     )

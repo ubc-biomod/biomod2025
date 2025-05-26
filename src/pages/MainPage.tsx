@@ -1,17 +1,23 @@
 import React from 'react';
+import { GoArrowDown } from "react-icons/go";
 
 function MainPage() {
   return (
     <div className="mx-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[100vh]">
         <div className="flex flex-col justify-center">
-          <h1 className="text-8xl font-bold mb-4">Hydrogel 2025</h1>
-          <p className="text-4xl mt-4">
+          <h1 className="text-7xl leading-20 lg:text-8xl lg:leading-28 xl:text-9xl xl:leading-35 font-black mb-4">Hydrogel <br></br> 2025</h1>
+          <p className="text-3xl lg:text-4xl mt-4 font-medium">
             Our Hydrogel project for the 2025 competition...
           </p>
-          <p className="text-lg mt-16">
-            Scroll to learn more
-          </p>
+          <div className="flex items-end gap-x-2">
+            <div className="">
+              <GoArrowDown size={32}/>
+            </div>
+            <p className="text-xl mt-16">
+              Scroll to learn more!
+            </p>
+          </div>
         </div>
         <div className="flex flex-col justify-center">
           <img

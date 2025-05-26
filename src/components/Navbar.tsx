@@ -25,12 +25,12 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
       </div>
 
       {/* Navigation Links */}
-      <div className={`hidden lg:flex gap-x-8 justify-center`}>
+      <div className={`hidden lg:flex gap-x-12 justify-center items-center`}>
         {links.map((link: Link) => (
           <a
             key={link.href}
             href={link.href}
-            className="group dark:text-white text-navText font-semibold hover:opacity-70 transition duration-300"
+            className="group dark:text-white text-xl hover:opacity-70 transition duration-300"
           >
             {link.title}
             <div
