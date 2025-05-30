@@ -37,3 +37,43 @@ random colors
   --color-card-two: #ffc5c4;
 
 }
+
+body {
+  /* background: #AACDB5;
+background: radial-gradient(circle,rgba(170, 205, 181, 1) 0%, rgba(255, 159, 156, 1) 100%); */
+  /*#ffc5c4  #ff8584*/
+  background: #F1F1F1;
+}
+
+
+/*
+random colors
+#B9D8C2 - pastelly light green
+#9AC2C9 - pastelly light blue
+#8AA1B1 - grey/blue 
+#4A5043 - ebony (swampy brown)
+#FFCB47 - sunglow (warm yellow)
+*/
+
+@theme {
+  --color-bg-primary: #F1F1F1;
+  --color-bg-secondary: #47b99e;
+  --color-bg-tertiary: #FF9F9C;
+  --color-navbar: #FFFFFF;
+  --color-title: #1E1E1E;
+  --color-header: #1E1E1E;
+  --color-subheader: #1E1E1E;
+  --color-body: #1E1E1E;
+  --color-card-one: #72c2b5;
+  --color-card-two: #ffc5c4;
+
+}
+
+.cardContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+}
