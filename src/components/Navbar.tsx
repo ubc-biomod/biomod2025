@@ -13,24 +13,20 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-4 pt-4 bg-[#8AA1B1]">
+    <div className="grid grid-cols-3 gap-x-4 px-4 py-4 bg-navbar items-center min-h-[60px]">
+      {/* Logo and Title */}
       <div className="flex items-center space-x-2">
         <img src={logo} alt="UBC BIOMOD Logo" className="h-10 w-10" />
-        <span className="font-bold text-lg">UBC BIOMOD</span>
+        <span className="font-bold text-lg text-header">UBC BIOMOD</span>
       </div>
 
-      {/* Hamburger Icon (Mobile) */}
-      <div className="flex lg:hidden col-start-3 justify-end" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
-      </div>
-
-      {/* Navigation Links */}
-      <div className={`hidden lg:flex gap-x-8 justify-center`}>
+      {/* Navigation Links (Desktop) */}
+      <div className={`hidden lg:flex gap-x-8 justify-center items-center`}>
         {links.map((link: Link) => (
           <a
             key={link.href}
             href={link.href}
-            className="group dark:text-white text-navText font-semibold hover:opacity-70 transition duration-300"
+            className="group text-subheader text-navText font-semibold hover:opacity-70 transition duration-300"
           >
             {link.title}
             <div
@@ -47,6 +43,11 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
           <div>
           </div>
         )}
+      </div>
+
+      {/* Hamburger Icon (Mobile) */}
+      <div className="flex lg:hidden justify-end items-center" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
       </div>
     </div>
   );
