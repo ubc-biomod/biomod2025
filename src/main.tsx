@@ -19,6 +19,10 @@ const links: Link[] = [
   {
     href: "/sponsors", 
     title: "Sponsors"
+  },
+  {
+    href:  "/notebook",
+    title: "Lab Notebook"
   }
 ];
 
