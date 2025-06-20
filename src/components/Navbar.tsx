@@ -13,10 +13,10 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-4 pt-4">
+    <div className="grid grid-cols-3 gap-x-4 px-32 pt-4">
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="UBC BIOMOD Logo" className="h-10 w-10" />
-        <span className="font-bold text-lg">UBC BIOMOD</span>
+        <img src={logo} alt="UBC BIOMOD Logo" className="h-12 w-auto" />
+        <span className="font-bold text-2xl">UBC BIOMOD</span>
       </div>
 
       {/* Hamburger Icon (Mobile) */}
@@ -25,12 +25,12 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
       </div>
 
       {/* Navigation Links */}
-      <div className={`hidden lg:flex gap-x-8 justify-center`}>
+      <div className={`hidden lg:flex gap-x-12 justify-center items-center`}>
         {links.map((link: Link) => (
           <a
             key={link.href}
             href={link.href}
-            className="group dark:text-white text-navText font-semibold hover:opacity-70 transition duration-300"
+            className="group dark:text-white text-xl hover:opacity-70 transition duration-300"
           >
             {link.title}
             <div

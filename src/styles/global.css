@@ -1,8 +1,32 @@
 @import 'tailwindcss';
-@import "tailwindcss/preflight"
+/* @import "tailwindcss/preflight"; */
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./fonts/Manrope-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
 .hero {
   /* --sl-color-hairline: transparent; */
   height: 0;
+}
+
+.cardContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
 }
