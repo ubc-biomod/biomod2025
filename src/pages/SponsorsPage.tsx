@@ -1,5 +1,3 @@
-import SponsorCards from '../components/SponsorCards'
-
 function SponsorsPage() {
     return (
         
@@ -41,7 +39,6 @@ function SponsorsPage() {
                     </tr>
                 </table>
             </div>
-            <SponsorCards></SponsorCards>
         </div>
         
     )

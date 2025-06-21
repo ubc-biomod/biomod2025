@@ -18,8 +18,13 @@ const links: Link[] = [
   },
   {
     href: "/sponsors", 
-    title: "Sponsors"
+    title: "Cards"
+  },
+  {
+    href: "/sponsors2",
+    title: "Cards Stack"
   }
+
 ];
 
 const currentBase: string = "filler";
