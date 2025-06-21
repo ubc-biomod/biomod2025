@@ -1,3 +1,5 @@
+import SponsorCards from "../components/SponsorCards";
+
 function SponsorsPage() {
     return (
         <div className='mx-32'>
@@ -42,7 +44,7 @@ function SponsorsPage() {
                 </table>
             </div>
         </div>
-        
+    </div>
     )
 }
 
