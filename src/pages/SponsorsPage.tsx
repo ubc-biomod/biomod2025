@@ -1,4 +1,4 @@
-import SponsorCards from "../components/SponsorCards";
+
 
 function SponsorsPage() {
     return (
