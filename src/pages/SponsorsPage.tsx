@@ -3,7 +3,6 @@ import SponsorCards from "../components/SponsorCards";
 function SponsorsPage() {
     return (
         <div className='mx-32'>
-            <SponsorCards></SponsorCards>
         
         <div className="bg-linear-to-bl from-pink-200 to-violet-300 h-500 p-10">
             
