@@ -13,15 +13,47 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-32 pt-4">
+    <div className="grid grid-cols-3 gap-x-4 px-16 lg:px-32 pt-4">
       <div className="flex items-center space-x-2">
         <img src={logo} alt="UBC BIOMOD Logo" className="h-12 w-auto" />
         <span className="font-bold text-2xl">UBC BIOMOD</span>
       </div>
 
       {/* Hamburger Icon (Mobile) */}
-      <div className="flex lg:hidden col-start-3 justify-end" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+      <div className="flex lg:hidden col-start-3 justify-end relative">
+        {!isOpen && (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="focus:outline-none"
+            aria-label="Open menu"
+          >
+            <FiMenu className="text-2xl" />
+          </button>
+        )}
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="absolute top-0 right-0">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-0 focus:outline-none"
+              aria-label="Close menu"
+            >
+              <FiX className="text-3xl cursor-pointer" />
+            </button>
+            <nav className="flex flex-col gap-y-6 text-xl font-semibold w-full mt-10 w-56 bg-white bg-opacity-95 z-50 rounded-lg shadow-lg p-6 items-end">
+              {links.map((link: Link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="hover:opacity-70 transition duration-300 w-full text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.title}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
 
       {/* Navigation Links */}
