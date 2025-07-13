@@ -45,14 +45,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       footer={
         <Footer 
           links={[
-            {title: "Instagram", href: "https://www.ubcbiomod.com"}, 
-            {title: "Twitter", href: "https://www.ubcbiomod.com"}, 
-            {title: "LinkedIn", href: "https://www.ubcbiomod.com"}
+            {title: "Instagram", href: "https://www.instagram.com/ubcbiomod/?hl=en"}, 
+            {title: "LinkedIn", href: "https://www.linkedin.com/company/ubc-biomod/posts/?feedView=all"},
+            {title: "Website", href: "https://www.ubcbiomod.com"}, 
           ]} 
         />
       }
     >
-      <App />
+      <App/>
     </NormalLayout>
   </React.StrictMode>
 );

@@ -15,6 +15,7 @@ export default function Footer({ links }: { links: FooterLink[] }) {
             <a
               href={link.href}
               className="text-gray-800 hover:text-blue-600 transition"
+              target="blank"
             >
               {link.title}
             </a>
