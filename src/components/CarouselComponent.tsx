@@ -4,8 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Carousel() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
-  const [selectedText, setSelectedText] = useState<string>(data[0].moreText);
+    const [selectedText, setSelectedText] = useState<string>(data[0].moreText);
 
     const settings = {
         dots: true,
@@ -13,72 +12,66 @@ export default function Carousel() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0px",
+        afterChange: (current: number) => {
+            const centerIndex = (current + Math.floor(settings.slidesToShow / 2)) % data.length;
+            setSelectedText(data[centerIndex].moreText);
+        },
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                     infinite: true,
-                    dots: true
+                    dots: true,
+                    centerMode: true,
+                    centerPadding: "0px"
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: "0px"
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: "0px"
                 }
             }
         ]
     };
 
-    const handleToggle = (index: number) => {
-        if (selectedIndex === index) {
-            setSelectedIndex(null);
-            setSelectedText("");
-        } else {
-            setSelectedIndex(index);
-            setSelectedText(data[index].moreText);
-        }
-    };
-
     return (
         <div>
             <div className="flex justify-center m-4">
-                <h1 className="text-center bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full break-words">
+                <h1 className="text-center bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
                     Ethical, Legal, and Social Issues
                 </h1>
             </div>
-
 
             <div className="w-3/4 m-auto">
                 <div className="mt-15 mb-20">
                     <Slider {...settings}>
                         {data.map((d, cardIndex) => (
-                            <div key={cardIndex} className="bg-white text-black rounded-2xl mx-2 p-4 shadow-md min-h-[200px] h-auto">
-                                <div className="h-56 rounded-t-xl bg-indigo-500 flex justify-center items-center">
-                                    <img src={d.image} alt="" className="h-44 w-44"/>
-                                </div>
-
-                                <div className="flex flex-col justify-center items-center gap-4">
-                                    <p className="text-xl font-semibold">{d.name}</p>
-                                    <p>{d.review}</p>
-
-                                    <button
-                                        className="bg-indigo-500 text-white text-lg px-6 py-1 rounded-2xl"
-                                        onClick={() => handleToggle(cardIndex)}
-                                    >
-                                        {selectedIndex === cardIndex ? "Show Less" : "Read More"}
-                                    </button>
+                            <div key={cardIndex} className="px-2.5">
+                                <div className="bg-[#63f1a7] text-white rounded-2xl p-4 shadow-md min-h-[150px] h-auto">
+                                    <div className="h-56 rounded-t-xl bg-indigo-500 flex justify-center items-center">
+                                        <img src={d.image} alt="" className="h-44 w-44" />
+                                    </div>
+                                    <div className="flex flex-col justify-center items-center gap-2">
+                                        <p className="text-xl font-semibold">{d.name}</p>
+                                        <p>{d.review}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -87,7 +80,7 @@ export default function Carousel() {
             </div>
 
             {selectedText && (
-                <div className="w-3/4 m-auto bg-white rounded-xl shadow-md p-4 text-center text-gray-700">
+                <div className="w-3/4 m-auto bg-gray-400 rounded-xl shadow-md p-4 text-center text-gray-700">
                     {selectedText}
                 </div>
             )}
@@ -95,13 +88,11 @@ export default function Carousel() {
     );
 }
 
-// Sample data
-
 type CardData = {
-  name: string;
-  review: string;
-  moreText: string;
-  image: string;
+    name: string;
+    review: string;
+    moreText: string;
+    image: string;
 };
 
 const data: CardData[] = [
@@ -109,18 +100,18 @@ const data: CardData[] = [
         name: "test1",
         review: "review1",
         moreText: "The quick brown fox jumped over the fence.",
-        image: "/pokemon/001.png"
+        image: "/"
     },
     {
         name: "test2",
         review: "review",
         moreText: "I have a 500-day Duolingo streak. 🦉",
-        image: "/pokemon/002.png"
+        image: "/"
     },
     {
         name: "test3",
         review: "review3",
         moreText: "I am so overworked right now. I am so sad.",
-        image: "/pokemon/003.png"
+        image: "/"
     },
 ];
