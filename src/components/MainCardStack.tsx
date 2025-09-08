@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import MainPageCard from './MainPageCard';
 import dna_cyan from "../assets/images/dna_cyan.png"
+import squiggle from "../assets/images/squiggle6_cropped.png"
+import squiggle_scatter from "../assets/images/squiggle_scatter_cropped.png"
 
 const MainCardStack: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -21,7 +23,7 @@ const MainCardStack: React.FC = () => {
       description: "From the tiniest building blocks of life to a grand vision of combatting bacterial biofilms, our team explores it all. As we delve into the intricacies of enzyme modification and creating DNA endoskeletons of various sizes, our research lays the groundwork for a modular platform to tackle biofilm challenges. Discover the key factors influencing our design choices.",
       bgColor: "bg-card-one",
       order: "flex-col md:flex-row",
-      bgSrc: dna_cyan,
+      bgSrc: squiggle_scatter,
       isVideo: false
     },
     {
@@ -29,7 +31,7 @@ const MainCardStack: React.FC = () => {
       description: "From the tiniest building blocks of life to a grand vision of combatting bacterial biofilms, our team explores it all. As we delve into the intricacies of enzyme modification and creating DNA endoskeletons of various sizes, our research lays the groundwork for a modular platform to tackle biofilm challenges. Discover the key factors influencing our design choices.",
       bgColor: "bg-card-two",
       order: "flex-col md:flex-row-reverse",
-      bgSrc: dna_cyan,
+      bgSrc: squiggle_scatter,
       isVideo: false
     },
     {

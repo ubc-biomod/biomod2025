@@ -4,7 +4,7 @@ import arrow_down from "../assets/icons/arrow_down.png"
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br px-4 py-20">
+    <div className="flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-20" style={{ minHeight: 'calc(100vh - 60px)' }}>
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-24 items-center">
         {/* Text Content */}
         <div className="space-y-6">

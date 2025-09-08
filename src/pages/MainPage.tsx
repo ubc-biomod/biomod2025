@@ -4,7 +4,7 @@ import CardStack from '../components/MainCardStack';
 
 function MainPage() {
   return (
-    <div>
+    <div className="bg-card-one">
       {/* Hero Section */}
       <HeroSection />
       
