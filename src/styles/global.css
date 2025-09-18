@@ -38,11 +38,31 @@ body {
   color: #4f46e5 !important;
 }
 
-.cardContainer {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 0px;
+body {
+  /* background: #AACDB5;
+background: radial-gradient(circle,rgba(170, 205, 181, 1) 0%, rgba(255, 159, 156, 1) 100%); */
+  /*#ffc5c4  #ff8584*/
+  background: #f1f1f1;
+}
+
+/*
+random colors
+#B9D8C2 - pastelly light green
+#9AC2C9 - pastelly light blue
+#8AA1B1 - grey/blue 
+#4A5043 - ebony (swampy brown)
+#FFCB47 - sunglow (warm yellow)
+*/
+
+@theme {
+  --color-bg-primary: #f1f1f1;
+  --color-bg-secondary: #47b99e;
+  --color-bg-tertiary: #ff9f9c;
+  --color-navbar: #ffffff;
+  --color-title: #1e1e1e;
+  --color-header: #1e1e1e;
+  --color-subheader: #1e1e1e;
+  --color-body: #1e1e1e;
+  --color-card-one: #72c2b5;
+  --color-card-two: #ffc5c4;
 }

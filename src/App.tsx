@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import SponsorsPage from './pages/SponsorsPage';
 import ELSIPage from './pages/ELSIPage';
+import SponsorsPageDemo from './pages/SponsorsPageDemo';
 import LabNotebook from './pages/LabNotebook';
 
 function App() {

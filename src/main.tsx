@@ -24,6 +24,7 @@ const links: Link[] = [
     href:  "/notebook",
     title: "Lab Notebook"
   }
+
 ];
 
 const currentBase: string = "filler";
