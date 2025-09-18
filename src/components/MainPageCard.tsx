@@ -22,7 +22,7 @@ const MainPageCard: React.FC<CardProps> = ({ index, title, description, bgColor,
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 text-subheader">{title}</h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-body leading-relaxed mb-4 sm:mb-6">{description}</p>
           {isVideo && <iframe
-            className="w-full sm:w-4/5 lg:w-3/5 aspect-video"
+            className="sm:w-4/5 lg:w-1/2 aspect-video"
             src="https://www.youtube.com/embed/krcnwXdkRuU?si=3uzEiIuDTUkkHPDK"
             title="YouTube video player"
             frameBorder="0"

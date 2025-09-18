@@ -13,7 +13,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-32 py-4 bg-navbar items-center min-h-[60px]">
+    <div className="grid grid-cols-3 gap-x-4 px-16 xl:px-32 py-4 bg-navbar items-center min-h-[60px] z-10">
       {/* Logo and Title */}
       <div className="flex items-center space-x-2">
         <img src={logo} alt="UBC BIOMOD Logo" className="h-12 w-auto" />
@@ -21,7 +21,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <div className={`hidden lg:flex gap-x-12 justify-center items-center items-center`}>
+      <div className={`relative left-10 hidden lg:flex gap-x-12 justify-center items-center items-center`}>
         {links.map((link: Link) => (
           <a
             key={link.href}
@@ -46,7 +46,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
       </div>
 
       {/* Hamburger Icon (Mobile) */}
-      <div className="flex lg:hidden justify-end items-center" onClick={() => setIsOpen(!isOpen)}>
+      <div className="flex lg:hidden justify-end items-center col-start-3" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
       </div>
     </div>
