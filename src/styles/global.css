@@ -1,16 +1,16 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 /* @import "tailwindcss/preflight"; */
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Manrope';
-    src: url('./fonts/Manrope-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Manrope";
+  src: url("./fonts/Manrope-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   background-color: #ffffff;
   color: #333;
   margin: 0;
@@ -20,6 +20,22 @@ body {
 .hero {
   /* --sl-color-hairline: transparent; */
   height: 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #6366f1 !important; /* Indigo-500 */
+  font-size: 24px !important;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #4f46e5 !important;
 }
 
 .cardContainer {
