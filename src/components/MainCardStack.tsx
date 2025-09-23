@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import MainPageCard from './MainPageCard';
-import dna_cyan from "../assets/images/dna_cyan.png"
 import squiggle from "../assets/images/squiggle6_cropped.png"
 import squiggle_scatter from "../assets/images/squiggle_scatter_cropped.png"
 

@@ -2,6 +2,8 @@ import Figure from "../components/reusable/Figure";
 import Card from '../components/reusable/Card'
 import Table from "../components/reusable/Table";
 
+import React, { useEffect, useState } from "react";
+
 
 interface SidebarProps {
     sections: string[];
@@ -26,19 +28,40 @@ const Sidebar: React.FC<SidebarProps> = ({ sections }) => {
 };
 
 
-
 function LabNotebook() {
-    const sections = ['Abstract', 'Wetlab', 'Computational'];
+    const sections = ['Design', 'Future', 'Simulations'];
+
+    const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
+
+    const loadHtml = (key: string, path: string) => {
+        fetch(path)
+            .then((res) => res.text())
+            .then((html) => {
+                setHtmlSections(prev => ({
+                    ...prev,
+                    [key]: html
+                }));
+            })
+            .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
+    };
+
+    useEffect(() => {
+        loadHtml('design', 'src/writeups/Design Page Write-up/DesignPageWriteup.html');
+        // loadHtml('future', 'src/writeups/Future Page/CostTechnoeconomicAnalysisWriteup.html');
+        // loadHtml('simulations', 'src/writeups/Simulations Page writeup/SimulationsPagewriteup.html');
+        // Add more as needed
+    }, []);
+
 
     return (
         <div className="flex mb-16">
             <Sidebar sections={sections} />
             <div className="mx-12 lg:mx-32 flex flex-col items-center justify-center -z-10">
-                <h1 className="text-4xl font-bold m-16">
+                {/* <h1 className="text-4xl font-bold m-16">
                     This is the Lab Notebook.
-                </h1>
+                </h1> */}
 
-                <Card id="abstract" title='Abstract' cardClass='w-full lg:w-3/4'>
+                {/* <Card id="abstract" title='Abstract' cardClass='w-full lg:w-3/4'>
                     As the second most common cancer in males, prostate cancer presents significant therapeutic challenges. Leading conventional immunotherapies, such as CAR-T-cell therapies, face obstacles in tumour site infiltration due to insufficient tumoural antigen heterogeneity and concentration. To overcome these issues with current immunotherapies, we designed the AND box, a targeted DNA nanostructure engineered to enhance T-cell mediated cancer cell elimination. Our box uses an aptamer-based lock mechanism to ensure specificity to prostate cancer cells while preventing off-target T-cell activation.
                     <br />
                     <br />
@@ -52,7 +75,7 @@ function LabNotebook() {
                     The wetlab notebook is a record of all the experiments, protocols, and results obtained in the laboratory. 
                     It includes details such as reagents used, experimental conditions, observations, and conclusions drawn from the experiments.
                     <Figure
-                        image="public\images\mitochondria.png"
+                        image="/images/mitochondria.png"
                         figureNumber={1}
                         description="this is a mitochondria, it is a powers the cell i think... idk too much im in CS 😭"
                         alt="Mitochondria"
@@ -70,6 +93,21 @@ function LabNotebook() {
                         csvPath="src\assets\images\tables\addresses.csv"
                         tableNumber={2}
                         description="I know where you live..."
+                    />
+                </Card> */}
+                <Card id="design" cardClass='w-full lg:w-3/4'>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
+                    />
+                </Card>
+                <Card id="future" cardClass='w-full lg:w-3/4'>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: htmlSections['future'] }}
+                    />
+                </Card>
+                <Card id="simulations" cardClass='w-full lg:w-3/4'>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: htmlSections['simulations'] }}
                     />
                 </Card>
             </div>
