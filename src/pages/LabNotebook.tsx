@@ -1,6 +1,7 @@
 import Figure from "../components/reusable/Figure";
 import Card from '../components/reusable/Card'
 import Table from "../components/reusable/Table";
+import MarkdownRenderer from "../components/reusable/MarkdownRenderer";
 
 import React, { useEffect, useState } from "react";
 
@@ -96,20 +97,23 @@ function LabNotebook() {
                     />
                 </Card> */}
                 <Card id="design" cardClass='w-full lg:w-3/4'>
-                    <div
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
+                    </div>
+                    {/* <div
                         dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
-                    />
+                    /> */}
                 </Card>
                 <Card id="future" cardClass='w-full lg:w-3/4'>
-                    <div
-                        dangerouslySetInnerHTML={{ __html: htmlSections['future'] }}
-                    />
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
+                    </div>
                 </Card>
-                <Card id="simulations" cardClass='w-full lg:w-3/4'>
-                    <div
-                        dangerouslySetInnerHTML={{ __html: htmlSections['simulations'] }}
-                    />
-                </Card>
+                {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
+                    </div>
+                </Card> */}
             </div>
         </div>
     )
