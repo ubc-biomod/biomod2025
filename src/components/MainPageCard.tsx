@@ -8,16 +8,17 @@ interface CardProps {
   order: string;
   bgSrc: string;
   isVideo: boolean;
+  imgClass: string;
 }
 
-const MainPageCard: React.FC<CardProps> = ({ index, title, description, bgColor, order, bgSrc, isVideo }) => {
+const MainPageCard: React.FC<CardProps> = ({ index, title, description, bgColor, order, bgSrc, isVideo, imgClass }) => {
   return (
     <div 
       className={`w-full flex items-center justify-center ${bgColor}`}
       style={{ height: '100vh', zIndex: 50 - index }}
     >
       <div className={`h-full w-full flex flex-col md:flex-row md:mx-24 ${!isVideo ? 'my-auto' : ''} items-center justify-center ${order}`}>
-        <img src={bgSrc} className="w-auto h-1/2 md:h-full rotate-90 md:rotate-0 flex-shrink-0"  />
+        <img src={bgSrc} className={`w-auto h-1/2 md:h-full rotate-90 md:rotate-0 flex-shrink-0 ${imgClass}`}  />
         <div className={`flex-1 max-w-2/3 md:max-w-none mx-auto text-center px-4 py-4 md:py-0 ${isVideo ? 'flex flex-col justify-center items-center h-full' : 'flex flex-col justify-center h-full'}`}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 text-subheader">{title}</h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-body leading-relaxed mb-4 sm:mb-6">{description}</p>

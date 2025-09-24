@@ -27,6 +27,7 @@ const MainCardStack: React.FC = () => {
       bgColor: "bg-card-one",
       order: "flex-col md:flex-row",
       bgSrc: WSsquiggle2,
+      imgClass: "",
       isVideo: false
     },
     {
@@ -35,6 +36,7 @@ const MainCardStack: React.FC = () => {
       bgColor: "bg-card-two",
       order: "flex-col md:flex-row-reverse",
       bgSrc: WSsquiggle6,
+      imgClass: "",
       isVideo: false
     },
     {
@@ -43,6 +45,7 @@ const MainCardStack: React.FC = () => {
       bgColor: "bg-card-one",
       order: "flex-col",
       bgSrc: "",
+      imgClass: "",
       isVideo: true
     }
   ];
@@ -73,6 +76,7 @@ const MainCardStack: React.FC = () => {
                 order={card.order}
                 bgSrc={card.bgSrc}
                 isVideo={card.isVideo}
+                imgClass={card.imgClass}
               />
             </div>
           );
