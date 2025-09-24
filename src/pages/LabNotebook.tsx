@@ -55,7 +55,7 @@ function LabNotebook() {
 
 
     return (
-        <div className="flex mb-16">
+        <div className="flex mb-16 overflow-x-hidden">
             <Sidebar sections={sections} />
             <div className="mx-12 lg:mx-32 flex flex-col items-center justify-center -z-10">
                 {/* <h1 className="text-4xl font-bold m-16">

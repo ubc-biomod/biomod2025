@@ -47,7 +47,26 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
 
       {/* Hamburger Icon (Mobile) */}
       <div className="flex lg:hidden justify-end items-center col-start-3" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+        <div className="flex flex-col">
+            <div className="flex justify-end">
+                {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+            </div>
+            {/* Mobile Menu Overlay */}
+            {isOpen && (
+                <div className="absolute right-10 top-30 lg:hidden bg-navbar text-subheader px-6 py-4 space-y-4 shadow-md z-10">
+                    {links.map((link) => (
+                        <a
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block text-lg font-medium hover:opacity-70 transition duration-300"
+                        >
+                        {link.title}
+                        </a>
+                    ))}
+                </div>
+            )}
+        </div>
       </div>
     </div>
   );
