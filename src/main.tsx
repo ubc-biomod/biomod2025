@@ -9,22 +9,33 @@ import { Link } from './components/Navbar';
 
 const links: Link[] = [
   {
-    href: "/",
-    title: "Home"
+    href:  "/project",
+    title: "Project"
   },
   {
+    href:  "/design",
+    title: "Design"
+  },
+  {
+    href:  "/simulations",
+    title: "Simulations"
+  },
+  {
+    href:  "/experiments",
+    title: "Experiments"
+  },
+  {
+    href:  "/future",
+    title: "Future"
+  },
+{
     href: "/elsi",
     title: "ELSI"
   },
   {
     href: "/sponsors", 
     title: "Sponsors"
-  },
-  {
-    href:  "/notebook",
-    title: "Lab Notebook"
   }
-
 ];
 
 const currentBase: string = "filler";

@@ -15,18 +15,20 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   return (
     <div className="grid grid-cols-3 gap-x-4 px-16 xl:px-32 py-4 bg-navbar items-center min-h-[60px] z-10">
       {/* Logo and Title */}
-      <div className="flex items-center space-x-2">
-        <img src={logo} alt="UBC BIOMOD Logo" className="h-12 w-auto" />
-        <span className="font-bold text-2xl text-header">UBC BIOMOD</span>
-      </div>
+        <a href="/">   
+            <div className="flex items-center space-x-2">
+                <img src={logo} alt="UBC BIOMOD Logo" className="h-12 w-auto" />
+                <span className="font-bold text-2xl text-header">UBC BIOMOD</span>
+            </div>
+        </a>
 
       {/* Navigation Links (Desktop) */}
-      <div className={`relative left-10 hidden lg:flex gap-x-12 justify-center items-center items-center`}>
+      <div className={`relative left-10 hidden lg:flex gap-x-10 justify-center items-center items-center col-span-2`}>
         {links.map((link: Link) => (
           <a
             key={link.href}
             href={link.href}
-            className="group text-subheader text-xl hover:opacity-70 transition duration-300"
+            className="group text-subheader text-lg hover:opacity-70 transition duration-300"
           >
             {link.title}
             <div
