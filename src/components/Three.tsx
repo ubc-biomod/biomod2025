@@ -96,7 +96,7 @@ export default function Three() {
   }, []);
 
   return (
-    <div className='h-full overflow-visible'>
+    <div className='h-[400px] lg:h-full overflow-visible'>
       <div
         id="three-container"
         className={`h-full overflow-visible`}
