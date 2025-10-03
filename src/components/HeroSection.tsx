@@ -1,6 +1,7 @@
 import React from 'react';
 import hero_placeholder from "../assets/images/hero_placeholder.png"
 import arrow_down from "../assets/icons/arrow_down.png"
+import Three from './Three';
 
 const HeroSection: React.FC = () => {
   return (
@@ -24,7 +25,8 @@ const HeroSection: React.FC = () => {
         </div>
         
         {/* Image Placeholder */}
-        <img src={hero_placeholder} className="w-4/5 mx-auto " />
+        {/* <img src={hero_placeholder} className="w-4/5 mx-auto " /> */}
+        <Three />
       </div>
     </div>
   );
