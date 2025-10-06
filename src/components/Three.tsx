@@ -37,12 +37,6 @@ export default function Three() {
       undefined
     );
 
-    // const geometry = new THREE.BoxGeometry(3, 2, 2);
-    // const material = new THREE.MeshBasicMaterial({ color: 0xaaaaaa });
-    // const model = new THREE.Mesh(geometry, material);
-
-    // loader.load("/Guitar.glb");
-
     camera.position.z = 8;
     // camera.up.set(0, -1, 0);
 
@@ -53,27 +47,24 @@ export default function Three() {
     directionalLight.position.set(1, 0.2, 1).normalize();
     scene.add(directionalLight);
 
-    let mouseX = 0;
-    let mouseY = 0;
+    // let mouseX = 0;
+    // let mouseY = 0;
 
-    // Helper to check if screen is mobile
-    const isMobile = () => window.innerWidth < 1024;
+    // document.addEventListener("mousemove", (event) => {
+    //   if (isMobile()) return;
+    //   mouseX = (event.clientX / window.innerWidth) * 2;
+    //   mouseY = -(event.clientY / window.innerWidth) * 2;
 
-    document.addEventListener("mousemove", (event) => {
-      if (isMobile()) return;
-      mouseX = (event.clientX / window.innerWidth) * 2;
-      mouseY = -(event.clientY / window.innerWidth) * 2;
-
-      if (model) {
-        model.rotation.y = (mouseX - Math.PI) * Math.PI;
-        model.rotation.x = (mouseY - Math.PI / 2) * Math.PI;
-      }
-    });
+    //   if (model) {
+    //     model.rotation.y = (mouseX - Math.PI) * Math.PI;
+    //     model.rotation.x = (mouseY - Math.PI / 2) * Math.PI;
+    //   }
+    // });
 
     function animate() {
       requestAnimationFrame(animate);
 
-      if (model && isMobile()) {
+      if (model) {
         model.rotation.y += 0.006;
       }
 

@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
             <span>2025</span>
           </h1>
           <p className="text-lg md:text-3xl text-subheader leading-relaxed">
-            Our Hydrogel project for the 2025 competition...
+            Our Carbonic Anhydrase Gel Project for the 2025 competition...
           </p>
           <div className="flex flex-row sm:flex-row gap-4">
             <img src={arrow_down} className='w-8' />
