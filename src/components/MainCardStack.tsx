@@ -5,6 +5,8 @@ import squiggle from "../assets/images/squiggle6_cropped.png";
 import squiggle_scatter from "../assets/images/squiggle_scatter_cropped.png";
 import WSsquiggle2 from "../assets/images/WSsquiggle2-cropped.svg";
 import WSsquiggle6 from "../assets/images/WSsquiggle6-cropped.svg";
+import Pgel1 from "../assets/images/pgel1.png";
+import Pgel2 from "../assets/images/pgel2.png";
 
 
 const MainCardStack: React.FC = () => {
@@ -22,22 +24,52 @@ const MainCardStack: React.FC = () => {
 
   const cards = [
     {
-      title: "The smallest of beginnings",
-      description: "From the tiniest building blocks of life to a grand vision of combatting bacterial biofilms, our team explores it all. As we delve into the intricacies of enzyme modification and creating DNA endoskeletons of various sizes, our research lays the groundwork for a modular platform to tackle biofilm challenges. Discover the key factors influencing our design choices.",
+      title: "What is a P-Gel?",
+      description: `
+        Ingredients: 
+        1. Hydrogel composed of:
+        2. Crosslinked X-DNA Monomers
+        3. Gene Construct
+        4. Lysate Supplement`,
+      bgColor: "bg-card-two",
+      order: "flex-col md:flex-row",
+      bgSrc: WSsquiggle6,
+      imgClass: "",
+      isVideo: false,
+      imageSrc: Pgel1,
+    },
+    {
+      title: "What does the P-Gel Do?",
+      description: `
+        P-Gel stands for 'Protein-producing Gel'.
+
+        The P-Gel system:
+        1.) Contains and protects transcriptional units of a gene of interest
+        2.) Localizes transcription of genes into mRNA for efficiency
+        3.) Allows for translation of mRNA into the protein of interest
+      `,
       bgColor: "bg-card-one",
       order: "flex-col md:flex-row",
       bgSrc: WSsquiggle2,
       imgClass: "",
-      isVideo: false
+      isVideo: false,
+      imageSrc: Pgel2,
     },
     {
-      title: "The smallest of beginnings",
-      description: "From the tiniest building blocks of life to a grand vision of combatting bacterial biofilms, our team explores it all. As we delve into the intricacies of enzyme modification and creating DNA endoskeletons of various sizes, our research lays the groundwork for a modular platform to tackle biofilm challenges. Discover the key factors influencing our design choices.",
+      title: "Why use a P-Gel?",
+      description: `
+        Protein yield in cellular systems is limited by energy losses from nonspecific side reactions.
+
+        Our P-gel system may yield more because of:
+        1.) Specific gene expression
+        2.) Gene protection
+        3.) Reusable system and longer expression time
+      `,
       bgColor: "bg-card-two",
-      order: "flex-col md:flex-row-reverse",
+      order: "flex-col md:flex-row",
       bgSrc: WSsquiggle6,
       imgClass: "",
-      isVideo: false
+      isVideo: false,
     },
     {
       title: "Project Video",
@@ -77,6 +109,7 @@ const MainCardStack: React.FC = () => {
                 bgSrc={card.bgSrc}
                 isVideo={card.isVideo}
                 imgClass={card.imgClass}
+                imageSrc={card.imageSrc}
               />
             </div>
           );
@@ -84,7 +117,7 @@ const MainCardStack: React.FC = () => {
       </div>
       
       {/* Spacer to allow scrolling for all cards */}
-      <div style={{ height: `${cards.length * 60}vh` }}></div>
+      <div style={{ height: `${cards.length * 70}vh` }}></div>
     </div>
   );
 };

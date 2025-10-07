@@ -10,11 +10,11 @@ const HeroSection: React.FC = () => {
         {/* Text Content */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-8xl font-bold text-header leading-tight">
-            Hydrogel <br/>
+            P-Gel <br/>
             <span>2025</span>
           </h1>
           <p className="text-lg md:text-3xl text-subheader leading-relaxed">
-            Our Carbonic Anhydrase Gel Project for the 2025 competition...
+            Our Protein-producing Gel for the 2025 competition...
           </p>
           <div className="flex flex-row sm:flex-row gap-4">
             <img src={arrow_down} className='w-8' />
