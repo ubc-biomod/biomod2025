@@ -9,6 +9,7 @@ import Design from './pages/Design';
 import Simulations from './pages/Simulations';
 import Experiments from './pages/Experiments';
 import Future from './pages/Future';
+import ProjectPage from './pages/ProjectPage';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/sponsors" element={<SponsorsPageDemo />} />
-        <Route path="/elsi" element={<ELSIPage />} />
+        <Route path="/project" element={<ProjectPage />} />
         <Route path="/design" element={<Design />}/>
         <Route path="/simulations" element={<Simulations />}/>
         <Route path="/experiments" element={<Experiments />}/>
+        <Route path="/elsi" element={<ELSIPage />} />
         <Route path="/future" element={<Future />}/>
       </Routes>
     </Router>
