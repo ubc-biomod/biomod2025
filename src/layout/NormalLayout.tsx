@@ -10,7 +10,7 @@ export default function NormalLayout({ header, children, footer }: LayoutProps) 
   return (
     <div className="min-h-screen flex flex-col">
 
-      <header className="flex-shrink-0">
+      <header className="sticky top-0 flex-shrink-0 z-50">
         {header}
       </header>
 

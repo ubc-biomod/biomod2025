@@ -13,7 +13,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-16 xl:px-32 py-4 bg-navbar items-center min-h-[60px] z-10">
+    <div className="grid grid-cols-3 gap-x-4 px-16 xl:px-32 py-4 bg-navbar items-center min-h-[60px]">
       {/* Logo and Title */}
         <a href="/">   
             <div className="flex items-center space-x-2">
@@ -21,6 +21,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
                 <span className="font-bold text-2xl text-header">UBC BIOMOD</span>
             </div>
         </a>
+        
 
       {/* Navigation Links (Desktop) */}
       <div className={`relative left-10 hidden lg:flex gap-x-10 justify-center items-center items-center col-span-2`}>

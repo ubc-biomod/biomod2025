@@ -25,7 +25,7 @@ const MainPageCard: React.FC<CardProps> = ({ index, title, description, bgColor,
         backgroundRepeat: 'no-repeat',    // Prevent the image from repeating
       }}
     >
-      <div className={`h-full w-full flex flex-col md:flex-row md:mx-24 ${!isVideo ? 'my-auto' : ''} items-center justify-center ${order}`}>
+      <div className={`h-full w-full flex flex-col md:flex-row md:mx-24 ${!isVideo ? 'my-auto mt-20 pt-10' : 'mt-10'} items-center justify-center ${order}`}>
         {/* <img src={bgSrc} className={`w-auto h-1/2 md:h-full rotate-90 md:rotate-0 flex-shrink-0 ${imgClass}`}  /> */}
         <div className="flex flex-col lg:flex-row justify-center items-center w-full h-full">
             <div className={`flex-1 max-w-2/3 md:max-w-none mx-auto px-4 py-4 md:py-0 h-full ${isVideo ? 'flex flex-col justify-center items-center' : 'flex flex-col justify-center'}`}>

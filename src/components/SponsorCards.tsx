@@ -1,21 +1,21 @@
 'use client'
 import StickyCard from "./reusable/StickyCard"
-import { useEffect, useRef } from "react"
 
 export default function SponsorCards() {
     return (
         <div>
-            <StickyCard title="Gold" i={0} cardClass="bg-yellow-400 min-h-100 text-center">
-                <p>
-                    Gold sponsors!
-                    UBC School of Biomedical Engineering, UBC Engineering
-                </p>  
+            <StickyCard title="Gold Tier" i={0} cardClass="bg-yellow-400 min-h-100 text-center">
+                <div className="flex flex-col lg:flex-row justify-around gap-10 p-10">
+                    <img src="/images/sponsors/SBME_UBC.png" alt="UBC SBME" className="h-30"/>
+                    <img src="/images/sponsors/apsc.jpg" alt="UBC Applied Sciences" className="h-40"/>
+                </div>
             </StickyCard>
-            <StickyCard title="Bronze" i={1} cardClass="bg-yellow-600 min-h-100 text-center">
-                <p>
-                    Bronze sponsors!
-                    UBC Life Science Institute, Sino Biological, and New England Biolabs
-                </p>  
+            <StickyCard title="Bronze Tier" i={1} cardClass="bg-yellow-600 min-h-100 text-center">
+                <div className="flex flex-col lg:flex-row justify-center gap-10 p-10">
+                    <img src="/images/sponsors/lsi.jpg" alt="Life Science Institute" className="h-20"/>
+                    <img src="/images/sponsors/New_England_Biolabs_logo.png" alt="New England Biolabs" className="h-20"/>
+                    <img src="/images/sponsors/sino_biological.webp" alt="Sino Biological" className="h-20"/>
+                </div>
             </StickyCard>
         </div>
     )
