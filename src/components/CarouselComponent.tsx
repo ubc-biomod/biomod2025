@@ -54,7 +54,7 @@ export default function Carousel() {
     return (
         <div>
             <div className="flex justify-center m-4">
-                <h1 className="text-center bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
+                <h1 className="text-center bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
                     Ethical, Legal, and Social Issues
                 </h1>
             </div>
@@ -80,7 +80,7 @@ export default function Carousel() {
             </div>
 
             {selectedText && (
-                <div className="w-3/4 m-auto bg-gray-400 rounded-xl shadow-md p-4 text-center text-gray-700">
+                <div className="w-3/4 m-auto bg-gray-400 rounded-xl shadow-md p-4 mb-8 text-center text-gray-700">
                     {selectedText}
                 </div>
             )}
@@ -112,6 +112,18 @@ const data: CardData[] = [
         name: "test3",
         review: "review3",
         moreText: "I am so overworked right now. I am so sad.",
+        image: "/"
+    },
+    {
+        name: "test4",
+        review: "review4",
+        moreText: "CPSC310 is the bane of my existence.",
+        image: "/"
+    },
+    {
+        name: "test5",
+        review: "review5",
+        moreText: "Badminton go brrrr",
         image: "/"
     },
 ];

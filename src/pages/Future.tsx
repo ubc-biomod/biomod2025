@@ -34,7 +34,7 @@ function Future() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/DesignPageWriteup.html');
+        loadHtml('design', '/writeups/FuturePage/CostTechnoeconomicAnalysisWriteup.html');
     }, []);
 
 
