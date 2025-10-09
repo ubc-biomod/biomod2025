@@ -1,39 +1,21 @@
-import Figure from "../components/reusable/Figure";
-import Card from '../components/reusable/Card'
-import Table from "../components/reusable/Table";
-import MarkdownRenderer from "../components/reusable/MarkdownRenderer";
-import Sidebar from "../components/reusable/Sidebar";
 import Carousel from "../components/CarouselComponent";
 
-import React, { useEffect, useState } from "react";
-
-
 function ELSIPage() {
-    
-    const sections = [
-        'ELSI'];
-
-    const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
-
-    const loadHtml = (key: string, path: string) => {
-        fetch(path)
-            .then((res) => res.text())
-            .then((html) => {
-                setHtmlSections(prev => ({
-                    ...prev,
-                    [key]: html
-                }));
-            })
-            .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
-    };
-
-    useEffect(() => {
-        loadHtml('design', '/writeups/ELSI_page/ELSIWriteUp.html');
-    }, []);
-
 
     return (
         <div>
+            <div className="flex justify-center m-4">
+                <h1 className="text-center bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
+                    Ethical, Legal, and Social Issues
+                </h1>
+            </div>
+
+            <div className="w-3/4 m-auto mb-4">
+                <p className="text-left text-gray-700 text-lg">
+                    The UBC BIOMOD 2025 project entails the novel application of the DNA hydrogel-based protein synthesis system, previously developed by Park et al. (2009), in an E. coli lysate cell-free system. The system facilitates adaptable, scalable, and rapid protein expression using gene-encoded DNA hydrogels ("P-gels"). While this technology promises important advances in high-throughput protein production for therapeutic and research purposes, it also opens the door to a host of important ethical, legal, and social implications (ELSI) that must be considered at the local, national, and international levels. We recognized 5 general groups that may be affected (researchers, manufacturers, government/businesses, the general public and Indigenous peoples).
+                </p>
+            </div>
+
             <Carousel />
         </div>
         // <div className="flex mb-16 overflow-x-hidden px-4">

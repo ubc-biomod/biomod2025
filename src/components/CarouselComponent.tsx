@@ -14,31 +14,31 @@ const data: CardData[] = [
     {
         name: "Ethical Protein Production and Application",
         review: "review1",
-        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/Ethical2WriteUp.html",
         image: "/"
     },
     {
         name: "Waste Disposal and Scalability",
         review: "review2",
-        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/WasteWriteUp.html",
         image: "/images/garbage.png"
     },
     {
         name: "Intellectual Property Barriers in DNA Hydrogel Innovation",
         review: "review3",
-        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/IntellectualWriteUp.html",
         image: "/"
     },
     {
         name: "Unequal Access to Hydrogel-Based Treatments/ Technology",
         review: "review4",
-        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/UnequalWriteUp.html",
         image: "/"
     },
     {
         name: "Indigenous land rights and environmental ethics",
         review: "review5",
-        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/IndigenousWriteUp.html",
         image: "/"
     },
 ];
@@ -57,8 +57,13 @@ export default function Carousel() {
         centerMode: true,
         centerPadding: "0px",
         afterChange: (current: number) => {
-            const centerIndex = (current + Math.floor(settings.slidesToShow / 2)) % data.length;
-            setCurrentCenterIndex(centerIndex);
+            const currentSlide = document.querySelector(".slick-current");
+            if (currentSlide) {
+                const index = Number(currentSlide.getAttribute("data-index"));
+                if (!isNaN(index)) {
+                    setCurrentCenterIndex(index % data.length);
+                }
+            }
         },
         responsive: [
             {
@@ -93,7 +98,6 @@ export default function Carousel() {
         ]
     };
 
-    // Load HTML content from file paths
     const loadHtml = (path: string) => {
         if (loadedHtml[path]) {
             return Promise.resolve(loadedHtml[path]);
@@ -114,14 +118,12 @@ export default function Carousel() {
             });
     };
 
-    // Load all HTML files on mount
     useEffect(() => {
         data.forEach(item => {
             loadHtml(item.moreTextPath);
         });
     }, []);
 
-    // Update selected text when center index changes
     useEffect(() => {
         const currentPath = data[currentCenterIndex].moreTextPath;
         if (loadedHtml[currentPath]) {
@@ -135,19 +137,13 @@ export default function Carousel() {
 
     return (
         <div>
-            <div className="flex justify-center m-4">
-                <h1 className="text-center bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
-                    Ethical, Legal, and Social Issues
-                </h1>
-            </div>
-
             <div className="w-3/4 m-auto">
-                <div className="mt-15 mb-20">
+                <div className="mt-4 mb-20">
                     <Slider {...settings}>
                         {data.map((d, cardIndex) => (
-                            <div key={cardIndex} className="px-2.5">
-                                <div className="bg-[#63f1a7] text-white rounded-2xl p-4 shadow-md min-h-[150px] h-auto">
-                                    <div className="h-56 rounded-t-xl bg-indigo-500 flex justify-center items-center">
+                            <div key={cardIndex} data-index={cardIndex} className="px-2.5 pb-2.5">
+                                <div className="bg-white rounded-2xl p-4 shadow-md h-[330px] flex flex-col justify-between">
+                                    <div className="h-56 rounded-t-xl bg-indigo-300 flex justify-center items-center">
                                         <img src={d.image} alt="" className="h-44 w-44" />
                                     </div>
                                     <div className="flex flex-col justify-center items-center gap-2">
