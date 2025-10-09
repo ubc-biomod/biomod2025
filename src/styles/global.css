@@ -26,7 +26,7 @@ body {
 
 .slick-prev:before,
 .slick-next:before {
-  color: #6366f1 !important; /* Indigo-500 */
+  color: #4f46e5 !important; 
   font-size: 24px !important;
 }
 
