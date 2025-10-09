@@ -1,4 +1,11 @@
-import Carousel from "../components/CarouselComponent";
+import Figure from "../components/reusable/Figure";
+import Card from '../components/reusable/Card'
+import Table from "../components/reusable/Table";
+import MarkdownRenderer from "../components/reusable/MarkdownRenderer";
+import Sidebar from "../components/reusable/Sidebar";
+
+import React, { useEffect, useState } from "react";
+
 
 function ELSIPage() {
     
@@ -20,10 +27,7 @@ function ELSIPage() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/Design_page/DesignPageWriteup.html');
-        // loadHtml('future', 'src/writeups/Future Page/CostTechnoeconomicAnalysisWriteup.html');
-        // loadHtml('simulations', 'src/writeups/Simulations Page writeup/SimulationsPagewriteup.html');
-        // Add more as needed
+        loadHtml('design', '/writeups/ELSI_page/ELSIWriteUp.html');
     }, []);
 
 
