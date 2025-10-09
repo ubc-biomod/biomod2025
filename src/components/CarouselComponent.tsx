@@ -1,10 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+type CardData = {
+    name: string;
+    review: string;
+    moreTextPath: string;
+    image: string;
+};
+
+const data: CardData[] = [
+    {
+        name: "Ethical Protein Production and Application",
+        review: "review1",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        image: "/"
+    },
+    {
+        name: "Waste Disposal and Scalability",
+        review: "review2",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        image: "/images/garbage.png"
+    },
+    {
+        name: "Intellectual Property Barriers in DNA Hydrogel Innovation",
+        review: "review3",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        image: "/"
+    },
+    {
+        name: "Unequal Access to Hydrogel-Based Treatments/ Technology",
+        review: "review4",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        image: "/"
+    },
+    {
+        name: "Indigenous land rights and environmental ethics",
+        review: "review5",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp.html",
+        image: "/"
+    },
+];
+
 export default function Carousel() {
-    const [selectedText, setSelectedText] = useState<string>(data[0].moreText);
+    const [selectedTextHtml, setSelectedTextHtml] = useState<string>("");
+    const [loadedHtml, setLoadedHtml] = useState<Record<string, string>>({});
+    const [currentCenterIndex, setCurrentCenterIndex] = useState<number>(0);
 
     const settings = {
         dots: true,
@@ -16,7 +58,7 @@ export default function Carousel() {
         centerPadding: "0px",
         afterChange: (current: number) => {
             const centerIndex = (current + Math.floor(settings.slidesToShow / 2)) % data.length;
-            setSelectedText(data[centerIndex].moreText);
+            setCurrentCenterIndex(centerIndex);
         },
         responsive: [
             {
@@ -51,6 +93,46 @@ export default function Carousel() {
         ]
     };
 
+    // Load HTML content from file paths
+    const loadHtml = (path: string) => {
+        if (loadedHtml[path]) {
+            return Promise.resolve(loadedHtml[path]);
+        }
+
+        return fetch(path)
+            .then((res) => res.text())
+            .then((html) => {
+                setLoadedHtml(prev => ({
+                    ...prev,
+                    [path]: html
+                }));
+                return html;
+            })
+            .catch((err) => {
+                console.error(`Failed to fetch from ${path}:`, err);
+                return `<p>Failed to load content from ${path}</p>`;
+            });
+    };
+
+    // Load all HTML files on mount
+    useEffect(() => {
+        data.forEach(item => {
+            loadHtml(item.moreTextPath);
+        });
+    }, []);
+
+    // Update selected text when center index changes
+    useEffect(() => {
+        const currentPath = data[currentCenterIndex].moreTextPath;
+        if (loadedHtml[currentPath]) {
+            setSelectedTextHtml(loadedHtml[currentPath]);
+        } else {
+            loadHtml(currentPath).then(html => {
+                setSelectedTextHtml(html);
+            });
+        }
+    }, [currentCenterIndex, loadedHtml]);
+
     return (
         <div>
             <div className="flex justify-center m-4">
@@ -69,7 +151,7 @@ export default function Carousel() {
                                         <img src={d.image} alt="" className="h-44 w-44" />
                                     </div>
                                     <div className="flex flex-col justify-center items-center gap-2">
-                                        <p className="text-xl font-semibold">{d.name}</p>
+                                        <p className="text-xl text-center font-semibold">{d.name}</p>
                                         <p>{d.review}</p>
                                     </div>
                                 </div>
@@ -79,51 +161,11 @@ export default function Carousel() {
                 </div>
             </div>
 
-            {selectedText && (
-                <div className="w-3/4 m-auto bg-gray-400 rounded-xl shadow-md p-4 mb-8 text-center text-gray-700">
-                    {selectedText}
+            {selectedTextHtml && (
+                <div className="w-3/4 m-auto bg-white rounded-xl shadow-md p-4 mb-8 text-gray-700">
+                    <div dangerouslySetInnerHTML={{ __html: selectedTextHtml }} />
                 </div>
             )}
         </div>
     );
 }
-
-type CardData = {
-    name: string;
-    review: string;
-    moreText: string;
-    image: string;
-};
-
-const data: CardData[] = [
-    {
-        name: "test1",
-        review: "review1",
-        moreText: "The quick brown fox jumped over the fence.",
-        image: "/"
-    },
-    {
-        name: "test2",
-        review: "review",
-        moreText: "I have a 500-day Duolingo streak. 🦉",
-        image: "/"
-    },
-    {
-        name: "test3",
-        review: "review3",
-        moreText: "I am so overworked right now. I am so sad.",
-        image: "/"
-    },
-    {
-        name: "test4",
-        review: "review4",
-        moreText: "CPSC310 is the bane of my existence.",
-        image: "/"
-    },
-    {
-        name: "test5",
-        review: "review5",
-        moreText: "Badminton go brrrr",
-        image: "/"
-    },
-];

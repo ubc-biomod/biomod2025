@@ -3,6 +3,7 @@ import Card from '../components/reusable/Card'
 import Table from "../components/reusable/Table";
 import MarkdownRenderer from "../components/reusable/MarkdownRenderer";
 import Sidebar from "../components/reusable/Sidebar";
+import Carousel from "../components/CarouselComponent";
 
 import React, { useEffect, useState } from "react";
 
@@ -32,29 +33,32 @@ function ELSIPage() {
 
 
     return (
-        <div className="flex mb-16 overflow-x-hidden px-4">
-            <Sidebar sections={sections} />
-            <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
-                <Card id="design" cardClass='w-full lg:w-3/4'>
-                    {/* <div className="">
-                        <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
-                    </div> */}
-                    <div
-                        dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
-                    />
-                </Card>
-                {/* <Card id="future" cardClass='w-full lg:w-3/4'>
-                    <div className="">
-                        <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
-                    </div>
-                </Card> */}
-                {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
-                    <div className="">
-                        <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
-                    </div>
-                </Card> */}
-            </div>
+        <div>
+            <Carousel />
         </div>
+        // <div className="flex mb-16 overflow-x-hidden px-4">
+        //     <Sidebar sections={sections} />
+        //     <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
+        //         <Card id="design" cardClass='w-full lg:w-3/4'>
+        //             {/* <div className="">
+        //                 <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
+        //             </div> */}
+        //             <div
+        //                 dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
+        //             />
+        //         </Card>
+        //         {/* <Card id="future" cardClass='w-full lg:w-3/4'>
+        //             <div className="">
+        //                 <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
+        //             </div>
+        //         </Card> */}
+        //         {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
+        //             <div className="">
+        //                 <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
+        //             </div>
+        //         </Card> */}
+        //     </div>
+        // </div>
     )
 }
 
