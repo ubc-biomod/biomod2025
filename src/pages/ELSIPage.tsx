@@ -18,6 +18,8 @@ function ELSIPage() {
 
             <Carousel />
         </div>
+
+        
         // <div className="flex mb-16 overflow-x-hidden px-4">
         //     <Sidebar sections={sections} />
         //     <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
