@@ -11,13 +11,13 @@ function ELSIPage() {
     
     const sections = [
         'Project Background',
-    'Limitations of Current Solutions',
-'Project Problem and Solution',
-'Project Relevance',
-'Goals',
-'Feasibility',
-'Challenges',
-'References'];
+        'Limitations of Current Solutions',
+        'Project Problem and Solution',
+        'Project Relevance',
+        'Goals',
+        'Feasibility',
+        'Challenges',
+        'References'];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
 
