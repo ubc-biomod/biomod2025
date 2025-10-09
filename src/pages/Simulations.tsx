@@ -34,7 +34,7 @@ function Simulations() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/SimulationsPageWriteup.html');
+        loadHtml('design', '/writeups/SimulationsPage/SimulationsPageWriteup.html');
     }, []);
 
 

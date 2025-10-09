@@ -9,15 +9,15 @@ import React, { useEffect, useState } from "react";
 
 function Future() {
     const sections = [
+        'Cost Analysis of Protein Production: Comparative Overview of Hydrogel-Based Cell Free Systems',
         'Introduction',
-        'Background', 
-        'Design Components',
-        'Lysate Choice',
-        'Plasmid Design',
-        'P-gel Monomer Design',
-        'Hydrogel Dimension',
-        'Supplementary information',
-        'References',];
+        'Why Is This Important?',
+        'Our Models:',
+        'Small-Scale Manufacturing:',
+        'Large-Scale Manufacturing:',
+        'Prototype:',
+        'Discussion',
+        'Production Rate (mg per hour)',];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
 
@@ -34,7 +34,7 @@ function Future() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/DesignPageWriteup.html');
+        loadHtml('design', '/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.html');
     }, []);
 
 
