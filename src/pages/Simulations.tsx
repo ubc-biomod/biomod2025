@@ -10,14 +10,14 @@ import React, { useEffect, useState } from "react";
 function Simulations() {
     const sections = [
         'Introduction',
-        'Background', 
+        'Method', 
         'Design Components',
-        'Lysate Choice',
-        'Plasmid Design',
-        'P-gel Monomer Design',
-        'Hydrogel Dimension',
-        'Supplementary information',
-        'References',];
+        'Monomer Conformation',
+        'P-gel arm GC \+ Length',
+        'Assessing Stability:',
+        'Optimization:',
+        'Diffusion',
+        'System and Constraints:',];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
 
@@ -34,7 +34,7 @@ function Simulations() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/DesignPageWriteup.html');
+        loadHtml('design', '/writeups/DesignPage/SimulationsPageWriteup.html');
     }, []);
 
 
