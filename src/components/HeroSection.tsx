@@ -1,6 +1,7 @@
 import React from 'react';
 import hero_placeholder from "../assets/images/hero_placeholder.png"
 import arrow_down from "../assets/icons/arrow_down.png"
+import Three from './Three';
 
 const HeroSection: React.FC = () => {
   return (
@@ -9,11 +10,11 @@ const HeroSection: React.FC = () => {
         {/* Text Content */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-8xl font-bold text-header leading-tight">
-            Hydrogel <br/>
+            P-Gel <br/>
             <span>2025</span>
           </h1>
           <p className="text-lg md:text-3xl text-subheader leading-relaxed">
-            Our Hydrogel project for the 2025 competition...
+            Our Protein-producing Gel for the 2025 competition...
           </p>
           <div className="flex flex-row sm:flex-row gap-4">
             <img src={arrow_down} className='w-8' />
@@ -24,7 +25,8 @@ const HeroSection: React.FC = () => {
         </div>
         
         {/* Image Placeholder */}
-        <img src={hero_placeholder} className="w-4/5 mx-auto " />
+        {/* <img src={hero_placeholder} className="w-4/5 mx-auto " /> */}
+        <Three />
       </div>
     </div>
   );

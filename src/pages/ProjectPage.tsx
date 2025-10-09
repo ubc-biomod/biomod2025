@@ -7,14 +7,17 @@ import Sidebar from "../components/reusable/Sidebar";
 import React, { useEffect, useState } from "react";
 
 
-function Future() {
+function ELSIPage() {
+    
     const sections = [
-        'Future Experiments',
-        'Cost Analysis of Protein Production: Comparative Overview of Hydrogel-Based Cell Free Systems',
-        'Our Models:',
-        'Discussion',
-        'Reference Data and Tools',
-        'Bibliography',];
+        'Project Background',
+        'Limitations of Current Solutions',
+        'Project Problem and Solution',
+        'Project Relevance',
+        'Goals',
+        'Feasibility',
+        'Challenges',
+        'References'];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
 
@@ -31,7 +34,7 @@ function Future() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/Future_page/FuturePageWriteup.html');
+        loadHtml('design', '/writeups/ELSI_page/ELSIWriteUp.html');
     }, []);
 
 
@@ -39,14 +42,27 @@ function Future() {
         <div className="flex mb-16 overflow-x-hidden px-4">
             <Sidebar sections={sections} />
             <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
-                <Card cardClass='w-full lg:w-3/4'>
+                <Card id="design" cardClass='w-full lg:w-3/4'>
+                    {/* <div className="">
+                        <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
+                    </div> */}
                     <div
                         dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
                     />
                 </Card>
+                {/* <Card id="future" cardClass='w-full lg:w-3/4'>
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
+                    </div>
+                </Card> */}
+                {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
+                    </div>
+                </Card> */}
             </div>
         </div>
     )
 }
 
-export default Future;
+export default ELSIPage;

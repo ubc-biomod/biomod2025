@@ -9,13 +9,11 @@ import React, { useEffect, useState } from "react";
 
 function Design() {
     const sections = [
-        'Introduction',
-        'Background', 
         'Design Components',
-        'Lysate Choice',
+        'Lysate System',
         'Plasmid Design',
         'P-gel Monomer Design',
-        'Hydrogel Dimension',
+        'Hydrogel Dimension + Mold',
         'Supplementary information',
         'References',];
 
@@ -34,7 +32,7 @@ function Design() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/DesignPageWriteup.html');
+        loadHtml('design', '/writeups/Design_page/DesignPageWriteup.html');
         // loadHtml('future', 'src/writeups/Future Page/CostTechnoeconomicAnalysisWriteup.html');
         // loadHtml('simulations', 'src/writeups/Simulations Page writeup/SimulationsPagewriteup.html');
         // Add more as needed
