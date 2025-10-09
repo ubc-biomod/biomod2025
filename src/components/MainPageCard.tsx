@@ -31,7 +31,7 @@ const MainPageCard: React.FC<CardProps> = ({ index, title, description, bgColor,
             <div className={`flex-1 max-w-2/3 md:max-w-none mx-auto px-4 py-4 md:py-0 h-full ${isVideo ? 'flex flex-col justify-center items-center' : 'flex flex-col justify-center'}`}>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 text-subheader">{title}</h2>
                     <p 
-                        className="text-sm sm:text-base md:text-lg lg:text-xl text-body leading-relaxed mb-4 sm:mb-6"
+                        className="text-md sm:text-lg md:text-2xl lg:text-3xl text-bold font-semibold leading-relaxed mb-4 sm:mb-6"
                         style={{ whiteSpace: 'pre-line' }}
                     >
                         {description}
