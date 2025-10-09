@@ -1,9 +1,55 @@
 import Carousel from "../components/CarouselComponent";
 
 function ELSIPage() {
+    
+    const sections = [
+        'ELSI'];
+
+    const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
+
+    const loadHtml = (key: string, path: string) => {
+        fetch(path)
+            .then((res) => res.text())
+            .then((html) => {
+                setHtmlSections(prev => ({
+                    ...prev,
+                    [key]: html
+                }));
+            })
+            .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
+    };
+
+    useEffect(() => {
+        loadHtml('design', '/writeups/Design_page/DesignPageWriteup.html');
+        // loadHtml('future', 'src/writeups/Future Page/CostTechnoeconomicAnalysisWriteup.html');
+        // loadHtml('simulations', 'src/writeups/Simulations Page writeup/SimulationsPagewriteup.html');
+        // Add more as needed
+    }, []);
+
+
     return (
-        <div>
-            <Carousel />
+        <div className="flex mb-16 overflow-x-hidden px-4">
+            <Sidebar sections={sections} />
+            <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
+                <Card id="design" cardClass='w-full lg:w-3/4'>
+                    {/* <div className="">
+                        <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
+                    </div> */}
+                    <div
+                        dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
+                    />
+                </Card>
+                {/* <Card id="future" cardClass='w-full lg:w-3/4'>
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
+                    </div>
+                </Card> */}
+                {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
+                    <div className="">
+                        <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
+                    </div>
+                </Card> */}
+            </div>
         </div>
     )
 }

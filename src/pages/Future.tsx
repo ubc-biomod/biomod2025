@@ -9,13 +9,11 @@ import React, { useEffect, useState } from "react";
 
 function Future() {
     const sections = [
-        'Introduction',
-        'Background', 
         'Design Components',
-        'Lysate Choice',
+        'Lysate System',
         'Plasmid Design',
         'P-gel Monomer Design',
-        'Hydrogel Dimension',
+        'Hydrogel Dimension + Mold',
         'Supplementary information',
         'References',];
 
