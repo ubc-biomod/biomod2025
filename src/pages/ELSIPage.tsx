@@ -10,7 +10,13 @@ import React, { useEffect, useState } from "react";
 function ELSIPage() {
     
     const sections = [
-        'ELSI'];
+        'ELSI',
+        'Researchers',
+        'Manufacturers',
+        'Businesses',
+        'General Public',
+        'Indigenous Peoples, communities, and health advocates ' 
+    ];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
 
