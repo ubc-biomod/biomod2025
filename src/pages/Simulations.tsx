@@ -33,7 +33,7 @@ function Simulations() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/DesignPageWriteup.html');
+        loadHtml('design', '/writeups/Simulations_page/SimulationsPagewriteup.html');
     }, []);
 
 
