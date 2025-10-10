@@ -15,6 +15,7 @@ function Future() {
         'Our Models: ',
         'Discussion',
         'Reference Data and Tools',
+        'Appendix',
         'Bibliography',];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
