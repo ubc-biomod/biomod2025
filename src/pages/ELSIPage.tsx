@@ -1,9 +1,16 @@
 import Carousel from "../components/CarouselComponent";
+import DNA from "../assets/images/DNA Tutorial_ConnectedBase_HueAndSat.svg";
 
 function ELSIPage() {
 
     return (
-        <div>
+        <div
+                style={{ 
+                backgroundImage: `url(${DNA})`, // Add the background image here
+                // backgroundSize: 'cover',         // Ensure the image covers the entire container
+                // backgroundPosition: 'center',    // Center the image
+                backgroundRepeat: 'no-repeat',    // Prevent the image from repeating
+            }}>
             <div className="flex justify-center m-4">
                 <h1 className="text-center bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
                     Ethical, Legal, and Social Issues
