@@ -27,7 +27,12 @@ function ELSIPage() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/ELSI_page/ELSIWriteUp.html');
+        loadHtml('design', `/writeups/ELSI_page/NOT_SPLIT_UP_ELSIWriteUp.html`);
+
+        // the following forloop overwrites the html writeup
+        // for (let i = 0; i < 6; i++) {
+        //     loadHtml('design', `/writeups/ELSI_page/ELSIWriteUp${i}.html`); 
+        // }
     }, []);
 
 
@@ -36,23 +41,10 @@ function ELSIPage() {
             <Sidebar sections={sections} />
             <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
                 <Card id="design" cardClass='w-full lg:w-3/4'>
-                    {/* <div className="">
-                        <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
-                    </div> */}
                     <div
                         dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
                     />
                 </Card>
-                {/* <Card id="future" cardClass='w-full lg:w-3/4'>
-                    <div className="">
-                        <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
-                    </div>
-                </Card> */}
-                {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
-                    <div className="">
-                        <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
-                    </div>
-                </Card> */}
             </div>
         </div>
     )
