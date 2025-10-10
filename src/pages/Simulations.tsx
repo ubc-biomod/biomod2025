@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 
 function Simulations() {
     const sections = [
+        'Simulations',
         'Modelling Software and Evaluation Metrics',
         'Motivation', 
         'Methods',
