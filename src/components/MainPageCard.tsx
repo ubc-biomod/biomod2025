@@ -50,7 +50,7 @@ const MainPageCard: React.FC<CardProps> = ({ index, title, description, bgColor,
             {imageSrc && 
                 <div className="w-full lg:max-w-1/3 flex lg:flex-row justify-center items-center">
                 <div className="w-2/3 lg:w-full">
-                    <img src={imageSrc} className="object-cover" alt={imageSrc} />
+                    <img src={imageSrc} className={`object-cover ${imgClass}`} alt={imageSrc} />
                 </div>
             </div>
             }
