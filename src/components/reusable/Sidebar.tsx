@@ -11,7 +11,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sections }) => {
                 {sections.map((section, index) => (
                     <a
                         key={index}
-                        href={`#${section.replace(/\s+/g, '-').toLowerCase()}`}
+                        href={`#${section}`}
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
                     >
                         {section}
