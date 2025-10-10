@@ -33,9 +33,6 @@ function Design() {
 
     useEffect(() => {
         loadHtml('design', '/writeups/Design_page/DesignPageWriteup.html');
-        // loadHtml('future', 'src/writeups/Future Page/CostTechnoeconomicAnalysisWriteup.html');
-        // loadHtml('simulations', 'src/writeups/Simulations Page writeup/SimulationsPagewriteup.html');
-        // Add more as needed
     }, []);
 
 

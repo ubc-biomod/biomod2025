@@ -34,13 +34,13 @@ function Design() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/DesignPage/DesignPageWriteup.html');
+        loadHtml('design', '/writeups/Experiments_page/ExperimentsCombinedWriteUp.html');
     }, []);
 
 
     return (
         <div className="flex mb-16 overflow-x-hidden px-4">
-            <Sidebar sections={sections}/>
+            <Sidebar sections={Object.keys(htmlSections)}/>
             <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
                 <Card cardClass='w-full lg:w-3/4'>
                     <div
