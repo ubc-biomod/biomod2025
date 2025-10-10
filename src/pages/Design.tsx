@@ -11,7 +11,7 @@ function Design() {
     const sections = [
         'Design',
         'Design Components',
-        'Lysate System',
+        'Lysate System ',
         'Plasmid Design',
         'P-gel Monomer Design',
         'Hydrogel Dimension + Mold',

@@ -16,7 +16,7 @@ function Design() {
         'Protein Expression & Isolation',
         'Carbonic Anhydrase Activity Assay',
         'Works Cited',
-        'Appendix',
+        'Appendix ',
     ];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});

@@ -14,7 +14,7 @@ function Simulations() {
         'Motivation', 
         'Methods',
         'Monomer Conformation',
-        'P-gel arm GC + Length',
+        'P-gel arm GC + Length ',
         'Diffusion',
         'Data',
         'References',];
