@@ -34,7 +34,7 @@ function ELSIPage() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/ELSI_page/ELSIWriteUp.html');
+        loadHtml('design', '/writeups/Project_page/ProjectBackground.html');
     }, []);
 
 
