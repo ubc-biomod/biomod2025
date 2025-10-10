@@ -1,4 +1,7 @@
+import Figure from "../components/reusable/Figure";
 import Card from '../components/reusable/Card'
+import Table from "../components/reusable/Table";
+import MarkdownRenderer from "../components/reusable/MarkdownRenderer";
 import Sidebar from "../components/reusable/Sidebar";
 
 import React, { useEffect, useState } from "react";
@@ -6,8 +9,9 @@ import React, { useEffect, useState } from "react";
 
 function Design() {
     const sections = [
+        'Design',
         'Design Components',
-        'Lysate System',
+        'Lysate System ',
         'Plasmid Design',
         'P-gel Monomer Design',
         'Hydrogel Dimension + Mold',
@@ -20,9 +24,23 @@ function Design() {
         fetch(path)
             .then((res) => res.text())
             .then((html) => {
+                // if heading h1 h2 or h3 matches text in sections, add attribute id to that heading with section text
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const headings = doc.querySelectorAll('h1, h2, h3');
+                for (const section of sections) {
+                    const targetHeading = Array.from(headings).find(
+                        (el) => el.textContent === section
+                    );
+                    if (targetHeading) {
+                        console.log(targetHeading.textContent);
+                        targetHeading.setAttribute('id', section.replace(/\s+/g, '-').toLowerCase());
+                    }
+                }
+
                 setHtmlSections(prev => ({
                     ...prev,
-                    [key]: html
+                    [key]: new XMLSerializer().serializeToString(doc)
                 }));
             })
             .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
