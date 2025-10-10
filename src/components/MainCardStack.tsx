@@ -7,6 +7,7 @@ import WSsquiggle2 from "../assets/images/WSsquiggle2-cropped.svg";
 import WSsquiggle6 from "../assets/images/WSsquiggle6-cropped.svg";
 import Pgel1 from "../assets/images/pgel1.png";
 import Pgel2 from "../assets/images/pgel2.png";
+import Pgel3 from "../assets/images/pgel3.png";
 
 
 const MainCardStack: React.FC = () => {
@@ -69,6 +70,7 @@ const MainCardStack: React.FC = () => {
       order: "flex-col md:flex-row",
       bgSrc: WSsquiggle6,
       imgClass: "",
+      imageSrc: Pgel3,
       isVideo: false,
     },
     {
