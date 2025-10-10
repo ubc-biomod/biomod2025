@@ -10,24 +10,50 @@ import React, { useEffect, useState } from "react";
 function ELSIPage() {
     
     const sections = [
-        'ELSI'];
+        'ELSI',
+        'Researchers',
+        'Manufacturers',
+        'Businesses',
+        'General Public',
+        'Indigenous Peoples, communities, and health advocates ' 
+    ];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
 
+    
     const loadHtml = (key: string, path: string) => {
         fetch(path)
             .then((res) => res.text())
             .then((html) => {
+                // if heading h1 h2 or h3 matches text in sections, add attribute id to that heading with section text
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const headings = doc.querySelectorAll('h1, h2, h3');
+                for (const section of sections) {
+                    const targetHeading = Array.from(headings).find(
+                        (el) => el.textContent === section
+                    );
+                    if (targetHeading) {
+                        console.log(targetHeading.textContent);
+                        targetHeading.setAttribute('id', section.replace(/\s+/g, '-').toLowerCase());
+                    }
+                }
+
                 setHtmlSections(prev => ({
                     ...prev,
-                    [key]: html
+                    [key]: new XMLSerializer().serializeToString(doc)
                 }));
             })
             .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/ELSI_page/ELSIWriteUp.html');
+        loadHtml('design', `/writeups/ELSI_page/NOT_SPLIT_UP_ELSIWriteUp.html`);
+
+        // the following forloop overwrites the html writeup
+        // for (let i = 0; i < 6; i++) {
+        //     loadHtml('design', `/writeups/ELSI_page/ELSIWriteUp${i}.html`); 
+        // }
     }, []);
 
 
@@ -36,23 +62,10 @@ function ELSIPage() {
             <Sidebar sections={sections} />
             <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
                 <Card id="design" cardClass='w-full lg:w-3/4'>
-                    {/* <div className="">
-                        <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
-                    </div> */}
                     <div
                         dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
                     />
                 </Card>
-                {/* <Card id="future" cardClass='w-full lg:w-3/4'>
-                    <div className="">
-                        <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
-                    </div>
-                </Card> */}
-                {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
-                    <div className="">
-                        <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
-                    </div>
-                </Card> */}
             </div>
         </div>
     )

@@ -9,8 +9,9 @@ import React, { useEffect, useState } from "react";
 
 function Design() {
     const sections = [
+        'Design',
         'Design Components',
-        'Lysate System',
+        'Lysate System ',
         'Plasmid Design',
         'P-gel Monomer Design',
         'Hydrogel Dimension + Mold',
@@ -23,9 +24,23 @@ function Design() {
         fetch(path)
             .then((res) => res.text())
             .then((html) => {
+                // if heading h1 h2 or h3 matches text in sections, add attribute id to that heading with section text
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const headings = doc.querySelectorAll('h1, h2, h3');
+                for (const section of sections) {
+                    const targetHeading = Array.from(headings).find(
+                        (el) => el.textContent === section
+                    );
+                    if (targetHeading) {
+                        console.log(targetHeading.textContent);
+                        targetHeading.setAttribute('id', section.replace(/\s+/g, '-').toLowerCase());
+                    }
+                }
+
                 setHtmlSections(prev => ({
                     ...prev,
-                    [key]: html
+                    [key]: new XMLSerializer().serializeToString(doc)
                 }));
             })
             .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
@@ -33,9 +48,6 @@ function Design() {
 
     useEffect(() => {
         loadHtml('design', '/writeups/Design_page/DesignPageWriteup.html');
-        // loadHtml('future', 'src/writeups/Future Page/CostTechnoeconomicAnalysisWriteup.html');
-        // loadHtml('simulations', 'src/writeups/Simulations Page writeup/SimulationsPagewriteup.html');
-        // Add more as needed
     }, []);
 
 
