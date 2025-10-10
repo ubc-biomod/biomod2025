@@ -34,7 +34,15 @@ function Design() {
     };
 
     useEffect(() => {
-        loadHtml('design', '/writeups/Experiments_page/ExperimentsCombinedWriteUp.html');
+        // MASTER
+        // loadHtml('Experiments', '/writeups/Experiments_page/ExperimentsCombinedWriteUp.html');
+        loadHtml('X-DNA Formation and Plasmid Linearization', '/writeups/Experiments_page/experimentsWriteups1.html');
+        loadHtml('P-gel Formation', '/writeups/Experiments_page/experimentsWriteups2.html');
+        loadHtml('PDMS Mold Formation', '/writeups/Experiments_page/experimentsWriteups3.html');
+        loadHtml('Protein Expression & Isolation', '/writeups/Experiments_page/experimentsWriteups4.html');
+        loadHtml('Carbonic Anhydrase Activity Assay', '/writeups/Experiments_page/experimentsWriteups5.html');
+        loadHtml('Works Cited', '/writeups/Experiments_page/experimentsWriteups6.html');
+        loadHtml('Appendix', '/writeups/Experiments_page/experimentsWriteups7.html');
     }, []);
 
 
@@ -42,11 +50,14 @@ function Design() {
         <div className="flex mb-16 overflow-x-hidden px-4">
             <Sidebar sections={Object.keys(htmlSections)}/>
             <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
-                <Card cardClass='w-full lg:w-3/4'>
-                    <div
-                        dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
-                    />
-                </Card>
+                {Object.values(htmlSections).map((html, index) => (
+                    <div className=''>
+                        <div
+                            key={index}
+                            dangerouslySetInnerHTML={{ __html: html }}
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     )
