@@ -9,14 +9,13 @@ import React, { useEffect, useState } from "react";
 
 function Simulations() {
     const sections = [
-        'Introduction',
-        'Background', 
-        'Design Components',
-        'Lysate Choice',
-        'Plasmid Design',
-        'P-gel Monomer Design',
-        'Hydrogel Dimension',
-        'Supplementary information',
+        'Modelling Software and Evaluation Metrics',
+        'Motivation', 
+        'Methods',
+        'Monomer Conformation',
+        'P-gel arm GC + Length',
+        'Diffusion',
+        'Data',
         'References',];
 
     const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
