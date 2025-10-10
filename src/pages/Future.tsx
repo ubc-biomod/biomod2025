@@ -9,9 +9,10 @@ import React, { useEffect, useState } from "react";
 
 function Future() {
     const sections = [
+        'Future',
         'Future Experiments',
-        'Cost Analysis of Protein Production: Comparative Overview of Hydrogel-Based Cell Free Systems',
-        'Our Models:',
+        'Cost Analysis of Protein Production:',
+        'Our Models: ',
         'Discussion',
         'Reference Data and Tools',
         'Bibliography',];
