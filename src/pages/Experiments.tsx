@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 
 function Design() {
     const sections = [
+        'Experiments',
         'X-DNA Formation and Plasmid Linearization',
         'P-gel Formation',
         'PDMS Mold Formation',
