@@ -14,31 +14,31 @@ const data: CardData[] = [
     {
         name: "Ethical Protein Production and Application",
         review: "",
-        moreTextPath: "/writeups/ELSI_page/Ethical2WriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp1.html",
         image: "/images/ethics.png"
     },
     {
         name: "Waste Disposal and Scalability",
         review: "",
-        moreTextPath: "/writeups/ELSI_page/WasteWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp2.html",
         image: "/images/garbage.png"
     },
     {
         name: "Intellectual Property Barriers in DNA Hydrogel Innovation",
         review: "",
-        moreTextPath: "/writeups/ELSI_page/IntellectualWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp3.html",
         image: "/images/intellectual-property.png"
     },
     {
         name: "Unequal Access to Hydrogel-Based Treatments/ Technology",
         review: "",
-        moreTextPath: "/writeups/ELSI_page/UnequalWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp4.html",
         image: "/images/accessibility.png"
     },
     {
         name: "Indigenous land rights and environmental ethics",
         review: "",
-        moreTextPath: "/writeups/ELSI_page/IndigenousWriteUp.html",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp5.html",
         image: "/images/indigenous.png"
     },
 ];
