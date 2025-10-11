@@ -64,15 +64,10 @@ function Design() {
     return (
         <div className="flex mb-16 overflow-x-hidden px-4">
             <Sidebar sections={sections}/>
-            <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
-                    <div className='w-full lg:w-3/4 mb-8'>
-                        <div dangerouslySetInnerHTML={{ __html: htmlSections['Experiments'] }} />
-                    </div>
-                {/* {Object.values(htmlSections).map((html, index) => (
-                    <div key={index} className='w-full lg:w-3/4 mb-8'>
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
-                    </div>
-                ))} */}
+            <div className="w-5/6 lg:mx-32 flex flex-col items-center justify-center -z-10">
+                <Card id="design" cardClass='w-full lg:w-3/4'>
+                    <div dangerouslySetInnerHTML={{ __html: htmlSections['Experiments'] }} />
+                </Card>
             </div>
         </div>
     )
