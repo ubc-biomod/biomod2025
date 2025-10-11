@@ -13,7 +13,7 @@ export default function Navbar({ links, currentBase, callToActionLink, isNormalP
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 gap-x-4 px-16 xl:px-32 py-4 bg-navbar items-center min-h-[60px] z-10">
+    <div className="grid grid-cols-3 gap-x-4 px-16 xl:px-32 py-4 bg-opacity-30 backdrop-blur-md items-center min-h-[60px] z-10">
       {/* Logo and Title */}
         <a href="/">   
             <div className="flex items-center space-x-2">
