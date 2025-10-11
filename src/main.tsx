@@ -35,6 +35,10 @@ const links: Link[] = [
   {
     href: "/sponsors", 
     title: "Sponsors"
+  },
+  {
+    href: "/team",
+    title: "Team"
   }
 ];
 

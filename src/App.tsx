@@ -10,6 +10,7 @@ import Simulations from './pages/Simulations';
 import Experiments from './pages/Experiments';
 import Future from './pages/Future';
 import ProjectPage from './pages/ProjectPage';
+import TeamPage from './pages/TeamPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/experiments" element={<Experiments />}/>
         <Route path="/elsi" element={<ELSIPage />} />
         <Route path="/future" element={<Future />}/>
+        <Route path="/team" element={<TeamPage />} />
       </Routes>
     </Router>
   );
