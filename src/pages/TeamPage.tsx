@@ -2,11 +2,11 @@ import TeamMemberCard from '../components/TeamMemberCard';
 
 function TeamPage() {
   const teamMembers = [
-    { name: 'Abteen Arab', role: 'Wetlab (Co-Lead)' },
-    { name: 'Anya Wongreantong', role: 'Computational' },
-    { name: 'Charity Grey', role: 'Computational (Co-Lead)' },
-    { name: 'Chloe Nguyen', role: 'Computational (Co-Lead)' },
-    { name: 'James Horvat', role: 'Wetlab (Co-Lead)' },
+    { name: 'Abteen Arab', role: 'Wetlab', imageUrl: '/src/assets/images/member_photos/abteen_a.jpeg' },
+    { name: 'Anya Wongreantong', role: 'Computational', imageUrl: '/src/assets/images/member_photos/anya_w.jpeg' },
+    { name: 'Charity Grey', role: 'Computational', imageUrl: '/src/assets/images/member_photos/charity_g.jpg' },
+    { name: 'Chloe Nguyen', role: 'Computational', imageUrl: '/src/assets/images/member_photos/chloe_n.png' },
+    { name: 'James Horvat', role: 'Wetlab', imageUrl: '/src/assets/images/member_photos/james_h.png' },
   ];
 
   return (
@@ -22,6 +22,7 @@ function TeamPage() {
               key={index}
               name={member.name}
               role={member.role}
+              imageUrl={member.imageUrl}
             />
           ))}
         </div>
