@@ -21,7 +21,7 @@ const data: CardData[] = [
         name: "Waste Disposal and Scalability",
         review: "",
         moreTextPath: "/writeups/ELSI_page/ELSIWriteUp2.html",
-        image: "/images/garbage.png"
+        image: "/images/waste_disposal_cropped.svg"
     },
     {
         name: "Intellectual Property Barriers in DNA Hydrogel Innovation",
@@ -33,13 +33,13 @@ const data: CardData[] = [
         name: "Unequal Access to Hydrogel-Based Treatments/ Technology",
         review: "",
         moreTextPath: "/writeups/ELSI_page/ELSIWriteUp4.html",
-        image: "/images/accessibility.png"
+        image: "/images/uneq_access_cropped.svg"
     },
     {
         name: "Indigenous land rights and environmental ethics",
         review: "",
         moreTextPath: "/writeups/ELSI_page/ELSIWriteUp5.html",
-        image: "/images/indigenous.png"
+        image: "/images/indigenous_lands_cropped.svg"
     },
 ];
 
