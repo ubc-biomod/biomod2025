@@ -1,73 +1,55 @@
-import Figure from "../components/reusable/Figure";
-import Card from '../components/reusable/Card'
-import Table from "../components/reusable/Table";
-import MarkdownRenderer from "../components/reusable/MarkdownRenderer";
-import Sidebar from "../components/reusable/Sidebar";
-
-import React, { useEffect, useState } from "react";
-
+import Carousel from "../components/CarouselComponent";
+import DNA from "../assets/images/DNA Tutorial_ConnectedBase_HueAndSat.svg";
 
 function ELSIPage() {
-    
-    const sections = [
-        'ELSI',
-        'Researchers',
-        'Manufacturers',
-        'Businesses',
-        'General Public',
-        'Indigenous Peoples, communities, and health advocates ' 
-    ];
-
-    const [htmlSections, setHtmlSections] = useState<Record<string, string>>({});
-
-    
-    const loadHtml = (key: string, path: string) => {
-        fetch(path)
-            .then((res) => res.text())
-            .then((html) => {
-                // if heading h1 h2 or h3 matches text in sections, add attribute id to that heading with section text
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const headings = doc.querySelectorAll('h1, h2, h3');
-                for (const section of sections) {
-                    const targetHeading = Array.from(headings).find(
-                        (el) => el.textContent === section
-                    );
-                    if (targetHeading) {
-                        console.log(targetHeading.textContent);
-                        targetHeading.setAttribute('id', section.replace(/\s+/g, '-').toLowerCase());
-                    }
-                }
-
-                setHtmlSections(prev => ({
-                    ...prev,
-                    [key]: new XMLSerializer().serializeToString(doc)
-                }));
-            })
-            .catch((err) => console.error(`Failed to fetch ${key} from ${path}:`, err));
-    };
-
-    useEffect(() => {
-        loadHtml('design', `/writeups/ELSI_page/NOT_SPLIT_UP_ELSIWriteUp.html`);
-
-        // the following forloop overwrites the html writeup
-        // for (let i = 0; i < 6; i++) {
-        //     loadHtml('design', `/writeups/ELSI_page/ELSIWriteUp${i}.html`); 
-        // }
-    }, []);
-
 
     return (
-        <div className="flex mb-16 overflow-x-hidden px-4">
-            <Sidebar sections={sections} />
-            <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
-                <Card id="design" cardClass='w-full lg:w-3/4'>
-                    <div
-                        dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
-                    />
-                </Card>
+        <div
+                style={{ 
+                backgroundImage: `url(${DNA})`, // Add the background image here
+                // backgroundSize: 'cover',         // Ensure the image covers the entire container
+                // backgroundPosition: 'center',    // Center the image
+                backgroundRepeat: 'no-repeat',    // Prevent the image from repeating
+            }}>
+            <div className="flex justify-center m-4">
+                <h1 className="text-center bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent p-4 max-w-full">
+                    Ethical, Legal, and Social Issues
+                </h1>
             </div>
+
+            <div className="w-3/4 m-auto mb-4">
+                <p className="text-left text-gray-700 text-lg">
+                    The UBC BIOMOD 2025 project entails the novel application of the DNA hydrogel-based protein synthesis system, previously developed by Park et al. (2009), in an E. coli lysate cell-free system. The system facilitates adaptable, scalable, and rapid protein expression using gene-encoded DNA hydrogels ("P-gels"). While this technology promises important advances in high-throughput protein production for therapeutic and research purposes, it also opens the door to a host of important ethical, legal, and social implications (ELSI) that must be considered at the local, national, and international levels. We recognized 5 general groups that may be affected (researchers, manufacturers, government/businesses, the general public and Indigenous peoples).
+                </p>
+            </div>
+
+            <Carousel />
         </div>
+
+        
+        // <div className="flex mb-16 overflow-x-hidden px-4">
+        //     <Sidebar sections={sections} />
+        //     <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
+        //         <Card id="design" cardClass='w-full lg:w-3/4'>
+        //             {/* <div className="">
+        //                 <MarkdownRenderer filePath="/writeups/DesignPage/Design Page Write-up.md" />
+        //             </div> */}
+        //             <div
+        //                 dangerouslySetInnerHTML={{ __html: htmlSections['design'] }}
+        //             />
+        //         </Card>
+        //         {/* <Card id="future" cardClass='w-full lg:w-3/4'>
+        //             <div className="">
+        //                 <MarkdownRenderer filePath="/writeups/FuturePage/Cost Technoeconomic Analysis Writeup.md" />
+        //             </div>
+        //         </Card> */}
+        //         {/* <Card id="simulations" cardClass='w-full lg:w-3/4'>
+        //             <div className="">
+        //                 <MarkdownRenderer filePath="/writeups/SimulationsPage/Simulations Page writeup.md" />
+        //             </div>
+        //         </Card> */}
+        //     </div>
+        // </div>
     )
 }
 
