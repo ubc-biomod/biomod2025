@@ -52,7 +52,7 @@ function Design() {
 
 
     return (
-        <div className="flex mb-16 overflow-x-hidden px-4">
+        <div className="flex mb-16 px-4">
             <Sidebar sections={sections} />
             <div className="w-full lg:mx-32 flex flex-col items-center justify-center -z-10">
                 <Card id="design" cardClass='w-full lg:w-3/4'>

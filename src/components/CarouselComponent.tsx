@@ -79,7 +79,7 @@ export default function Carousel() {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -88,7 +88,7 @@ export default function Carousel() {
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -169,7 +169,7 @@ export default function Carousel() {
                             <div key={cardIndex} data-index={cardIndex} className="px-2.5 pb-2.5">
                                 <div className="bg-white rounded-2xl p-4 shadow-md h-[330px] flex flex-col justify-between">
                                     <div className="h-56 rounded-t-xl bg-indigo-300 flex justify-center items-center">
-                                        <img src={d.image} alt="" className="h-44 w-44" />
+                                        <img src={d.image} alt="" className="h-44 object-contain" />
                                     </div>
                                     <div className="flex flex-col justify-center items-center gap-2">
                                         <p className="text-xl text-center font-semibold">{d.name}</p>

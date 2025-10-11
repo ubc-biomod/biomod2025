@@ -41,7 +41,7 @@ const Table: React.FC<TableProps> = ({
 
     return (
         <figure className={`flex flex-col items-center gap-4 my-8 ${className}`}>
-            <div className="overflow-x-hidden shadow-lg rounded-lg p-1">
+            <div className="shadow-lg rounded-lg p-1">
                 <table className="min-w-full table-auto border-collapse">
                     <thead className="bg-gray-100">
                         <tr>
