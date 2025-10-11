@@ -13,32 +13,32 @@ type CardData = {
 const data: CardData[] = [
     {
         name: "Ethical Protein Production and Application",
-        review: "review1",
-        moreTextPath: "/writeups/ELSI_page/Ethical2WriteUp.html",
+        review: "",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp1.html",
         image: "/images/ethics.png"
     },
     {
         name: "Waste Disposal and Scalability",
-        review: "review2",
-        moreTextPath: "/writeups/ELSI_page/WasteWriteUp.html",
+        review: "",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp2.html",
         image: "/images/garbage.png"
     },
     {
         name: "Intellectual Property Barriers in DNA Hydrogel Innovation",
-        review: "review3",
-        moreTextPath: "/writeups/ELSI_page/IntellectualWriteUp.html",
+        review: "",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp3.html",
         image: "/images/intellectual-property.png"
     },
     {
         name: "Unequal Access to Hydrogel-Based Treatments/ Technology",
-        review: "review4",
-        moreTextPath: "/writeups/ELSI_page/UnequalWriteUp.html",
+        review: "",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp4.html",
         image: "/images/accessibility.png"
     },
     {
         name: "Indigenous land rights and environmental ethics",
-        review: "review5",
-        moreTextPath: "/writeups/ELSI_page/IndigenousWriteUp.html",
+        review: "",
+        moreTextPath: "/writeups/ELSI_page/ELSIWriteUp5.html",
         image: "/images/indigenous.png"
     },
 ];
@@ -189,14 +189,14 @@ export default function Carousel() {
             )}
 
             <div className="hidden lg:block fixed right-0 top-0 h-screen w-48 bg-transparent p-4">
-                <nav className="space-y-2 mt-24">
+                <nav className="space-y-2 mt-24 text-sm">
                     {data.map((item, index) => (
                         <button
                             key={index}
                             onClick={() => handleSidebarClick(index)}
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors cursor-pointer"
                         >
-                            {item.name}
+                                {item.name}
                         </button>
                     ))}
                 </nav>
